@@ -123,8 +123,14 @@ ul {
   transition: transform 2s;
 }
 
+@keyframes colorChange {
+    0% {background-color: #FFC300;}
+    100% {background-color: #23E5D2;}
+}
 #create-recipe-button:hover {
-  background-color: #23E5D2;
   cursor:pointer;
+  background-color: #23E5D2;
   transform: rotate(360deg);
+  animation-name: colorChange;
+  animation-duration: 2s;
 }
