@@ -1,11 +1,11 @@
 body {
   font-family: 'Hind', sans-serif;
-  background-color: #FAFFFF;
+  background-color: #F4F5F5;
   margin: 0;
 }
 
 header {
-  background:linear-gradient(to bottom right,#24FEF6, #24A3FE);
+  background:linear-gradient(to right,#24FEF6, #24A3FE);
   height: 100px;
   length: auto;
   box-shadow: 2px 2px 2px grey;
@@ -56,10 +56,75 @@ ul {
   padding: 14px 16px;
 }
 
-.active a{
+.active a {
   font-size: 20px;
 }
 
-.navitem a:hover{
+.navitem a:hover {
   font-size: 20px;
+}
+
+.link-page {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 40px;
+  height:auto;
+  width: auto;
+}
+
+.link-container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 320px;
+  height: 250px;
+  margin: 20px;
+  box-shadow: 2px 2px 2px grey;
+}
+
+.link-container:hover{
+  cursor:pointer;
+}
+
+.linkimg {
+  padding: 10px;
+  padding-bottom: 2px;
+}
+
+.linkname {
+  margin : 0;
+  font-weight: bold;
+  text-align: center;
+}
+
+.recipe-page {
+  margin: 150px;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hidden {
+  display: none;
+}
+
+#create-recipe-button {
+  position: fixed;
+  font-size: 50px;
+  color: white;
+  right: 50px;
+  bottom: 50px;
+  width: 80px;
+  height: 80px;
+  background-color: #FFC300;
+  border-radius: 40px;
+  border: none;
+  transition: transform 2s;
+}
+
+#create-recipe-button:hover {
+  background-color: #23E5D2;
+  cursor:pointer;
+  transform: rotate(360deg);
 }
