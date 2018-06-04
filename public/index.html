@@ -18,40 +18,43 @@
 
   <body>
     <header>
-      <nav class="navbar">
-        <ul class="navlist">
-          <!-- send request to server when click -->
-          <li class="navitem1">Recommend</li>
-          <li class="navitem2">Category</li>
-          <li class="navitem3">All Recipes</li>
-          <li class="navitem3 navbar-search">
-            <input type="text" id="navbar-search-input" placeholder="Search for recipe...">
-            <button type="button" id="navbar-search-button"><i class="fas fa-search"></i></button>
-          </li>
-        </ul>
-      </nav>
+      <h1 class="site-title">Chinese Recipe</h1>
     </header>
 
-    <main class="recipe-container"> <!-- for index -->
+    <nav class="navbar">
+      <ul class="navlist">
+        <!-- send request to server when click -->
+        <li class="navitem1"><a href="/">Recommend</a></li>
+        <li class="navitem2"><a href="/category">Category</a></li>
+        <li class="navitem3"><a href="/recipes">All Recipes</a></li>
+        <li class="navitem3 navbar-search">
+          <input type="text" id="navbar-search-input" placeholder="Search for recipe...">
+          <button type="button" id="navbar-search-button"><i class="fas fa-search"></i></button>
+        </li>
+      </ul>
+    </nav>
+
+
+    <main class="link-page"> <!-- for index -->
       <!-- only need one for template -->
-      <article class="recipe-link">
-        <div class="link-image">
-          <img src="https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fcdn-image.foodandwine.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2F200911-xl-mama-changs-stir-fried-shrimp-and-scallions.jpg%3Fitok%3DdORctdLA&w=800&q=85" alt="recipe image" width="300" height="200">
+      <div class="link-container">
+        <div class="linkimg-container">
+          <img class="linkimg" src="https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fcdn-image.foodandwine.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2F200911-xl-mama-changs-stir-fried-shrimp-and-scallions.jpg%3Fitok%3DdORctdLA&w=800&q=85" alt="recipe image" width="300" height="200">
         </div>
-        <div class="link-container">
-          <p class="link-name">Mama Chang's Stir-Fried Shrimp and Scallions</p>
+        <div class="linkname-container">
+          <p class="linkname">Mama Chang's Stir-Fried Shrimp and Scallions</p>
         </div>
-      </article>
+      </div>
     </main>
 
     <main class="recipe-page"> <!-- for detailed recipe>
       <!- only need one for template -->
       <article class="recipe">
         <div class="name-container">
-          <p class="name">Mama Chang's Stir-Fried Shrimp and Scallions</p>
+          <h2 class="name">Mama Chang's Stir-Fried Shrimp and Scallions</h2>
         </div>
-        <div class="recipe-image">
-          <img src="https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fcdn-image.foodandwine.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2F200911-xl-mama-changs-stir-fried-shrimp-and-scallions.jpg%3Fitok%3DdORctdLA&w=800&q=85" alt="recipe image" with="600" height="400">
+        <div class="img-container">
+          <img class="img" src="https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fcdn-image.foodandwine.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2F200911-xl-mama-changs-stir-fried-shrimp-and-scallions.jpg%3Fitok%3DdORctdLA&w=800&q=85" alt="recipe image" with="600" height="400">
         </div>
         <div class="ingredient-container">
           <p class="ingredient">1/2 pounds shelled and deveined large shrimp 3 garlic cloves, sliced One 1-inch piece of fresh ginger, peeled and minced 1/2 teaspoons crushed red pepper, 1 large egg white, 2 teaspoons cornstarch, 3/4 cup ketchup, 1/2 cup low-sodium chicken broth, 1 tablespoon sugar, 1/2 teaspoons freshly ground pepper, 1/2 teaspoons kosher salt, 1/4 cup canola oil 3 scallions, thinly sliced 1/2 cup coarsely chopped cilantro.</p>
@@ -65,7 +68,15 @@
       </article>
     </main>
 
-    <main class="category-container">
+    <main class="category-page">
+      <div class="category-container">
+        <div class="categoryimg-container">
+          <img class="categoryimg" src="https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fcdn-image.foodandwine.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2F200911-xl-mama-changs-stir-fried-shrimp-and-scallions.jpg%3Fitok%3DdORctdLA&w=800&q=85" alt="category image" with="300" height="200">
+        </div>
+        <div class="categoryname-container">
+          <p class="categoryname">Stir-Fried</p>
+        </div>
+      </div>
     </main>
 
     <main class="notfounded-container"> <!-- for 404 -->
