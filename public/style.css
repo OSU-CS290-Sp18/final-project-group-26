@@ -56,10 +56,10 @@ ul {
   padding: 14px 16px;
 }
 
-.navitem a:hover{
+.active a{
   font-size: 20px;
 }
 
-.active a{
+.navitem a:hover{
   font-size: 20px;
 }
