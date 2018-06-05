@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
   <head>
 
@@ -17,73 +17,176 @@
   </head>
 
   <body>
-    <header>
-      <h1 class="site-title">Chinese Recipe</h1>
-    </header>
+      <header>
+          <h1 class="site-title">Chinese Recipe</h1>
+      </header>
 
-    <nav class="navbar">
-      <ul class="navlist">
-        <!-- send request to server when click -->
-        <li class="navitem active"><a href="/">Recommend</a></li>
-        <li class="navitem"><a href="/category">Category</a></li>
-        <li class="navitem"><a href="/recipes">All Recipes</a></li>
-        <li class="navitem navbar-search">
-          <input type="text" id="navbar-search-input" placeholder="Search for recipe...">
-          <button type="button" id="navbar-search-button"><i class="fas fa-search"></i></button>
-        </li>
-      </ul>
-    </nav>
+      <nav class="navbar">
+          <ul class="navlist">
+              <!-- send request to server when click -->
+              <li class="navitem active"><a href="/">Recommend</a></li>
+              <li class="navitem"><a href="/category">Category</a></li>
+              <li class="navitem"><a href="/recipes">All Recipes</a></li>
+              <li class="navitem navbar-search">
+                  <input type="text" id="navbar-search-input" placeholder="Search for recipe...">
+                  <button type="button" id="navbar-search-button"><i class="fas fa-search"></i></button>
+              </li>
+          </ul>
+      </nav>
 
-    <main class="link-page hidden"> <!-- for index -->
-      <!-- only need one for template -->
-      <div class="link-container">
-        <div class="linkimg-container">
-          <img class="linkimg" src="https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fcdn-image.foodandwine.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2F200911-xl-mama-changs-stir-fried-shrimp-and-scallions.jpg%3Fitok%3DdORctdLA&w=800&q=85" alt="recipe image" width="300" height="200">
-        </div>
-        <div class="linkname-container">
-          <p class="linkname">Stir-Fried Shrimp and Scallions</p>
-        </div>
-      </div>
-    </main>
+      <main class="page_container">
+          <!-- This is the main display container, content inside this will
+               change for different page. -->
 
-    <main class="recipe-page hidden"> <!-- for detailed recipe>
-      <!- only need one for template -->
-      <article class="recipe">
-        <div class="name-container">
-          <h2 class="name">Stir-Fried Shrimp and Scallions</h2>
-        </div>
-        <div class="img-container">
-          <img class="img" src="https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fcdn-image.foodandwine.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2F200911-xl-mama-changs-stir-fried-shrimp-and-scallions.jpg%3Fitok%3DdORctdLA&w=800&q=85" alt="recipe image" with="600" height="400">
-        </div>
-        <div class="ingredient-container">
-          <h3>Ingredients:</h3>
-          <p class="ingredient">1/2 pounds shelled and deveined large shrimp 3 garlic cloves, sliced One 1-inch piece of fresh ginger, peeled and minced 1/2 teaspoons crushed red pepper, 1 large egg white, 2 teaspoons cornstarch, 3/4 cup ketchup, 1/2 cup low-sodium chicken broth, 1 tablespoon sugar, 1/2 teaspoons freshly ground pepper, 1/2 teaspoons kosher salt, 1/4 cup canola oil 3 scallions, thinly sliced 1/2 cup coarsely chopped cilantro.</p>
-        </div>
-        <div class="direction-container">
-          <h3>Direction:</h3>
-          <p class="direction">Step 1: In a large bowl, toss the shrimp with the garlic, ginger, red pepper, egg white and 1 teaspoon of the cornstarch until well-coated.
-                               Step 2: In a medium bowl, whisk the ketchup with the broth, sugar, pepper, salt and the remaining 1 teaspoon of cornstarch.
-                               Step 3: In a very large skillet, heat the oil until shimmering. Add the shrimp and stir-fry over high heat until they begin to turn pink. Add the ketchup mixture and simmer until the shrimp are cooked, about 2 minutes. Stir in the scallions and cilantro and serve.</p>
-        <div>
-        </div>
-      </article>
-    </main>
+          <div class="main_screen">
+              <!-- For the index/main page -->
+              <div class="category_bar">
+                  <!-- This is the category bar on main page -->
+                  <ul class="cat_list">
+                      <li class="cat_element"><a>Meat</a></li>
+                      <li class="cat_element"><a>Seafood</a></li>
+                      <li class="cat_element"><a>Vegetables</a></li>
+                      <li class="cat_element"><a>Soup</a></li>
+                  </ul>
+              </div>
+              <div class="recommend_container">
+                  <!-- This is the container to display recommanded
+                       dishes -->
+                  <div class="link-container">
+                      <!-- only need one for template -->
+                      <!-- All others is for test purpose -->
+                      <div class="linkimg-container">
+                          <img class="linkimg" src="https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fcdn-image.foodandwine.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2F200911-xl-mama-changs-stir-fried-shrimp-and-scallions.jpg%3Fitok%3DdORctdLA&w=800&q=85" alt="recipe image" width="300" height="200">
+                      </div>
+                      <div class="rec_name_container">
+                          <p class="linkname">Stir-Fried Shrimp and Scallions</p>
+                      </div>
+                  </div>
+                  <div class="link-container">
+                      <div class="linkimg-container">
+                          <img class="linkimg" src="https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fcdn-image.foodandwine.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2F200911-xl-mama-changs-stir-fried-shrimp-and-scallions.jpg%3Fitok%3DdORctdLA&w=800&q=85" alt="recipe image" width="300" height="200">
+                      </div>
+                      <div class="rec_name_container">
+                          <p class="linkname">Stir-Fried Shrimp and Scallions</p>
+                      </div>
+                  </div>
+                  <div class="link-container">
+                      <div class="linkimg-container">
+                          <img class="linkimg" src="https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fcdn-image.foodandwine.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2F200911-xl-mama-changs-stir-fried-shrimp-and-scallions.jpg%3Fitok%3DdORctdLA&w=800&q=85" alt="recipe image" width="300" height="200">
+                      </div>
+                      <div class="rec_name_container">
+                          <p class="linkname">Stir-Fried Shrimp and Scallions</p>
+                      </div>
+                  </div>
+                  <div class="link-container">
+                      <div class="linkimg-container">
+                          <img class="linkimg" src="https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fcdn-image.foodandwine.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2F200911-xl-mama-changs-stir-fried-shrimp-and-scallions.jpg%3Fitok%3DdORctdLA&w=800&q=85" alt="recipe image" width="300" height="200">
+                      </div>
+                      <div class="rec_name_container">
+                          <p class="linkname">Stir-Fried Shrimp and Scallions</p>
+                      </div>
+                  </div>
+                  <div class="link-container">
+                      <div class="linkimg-container">
+                          <img class="linkimg" src="https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fcdn-image.foodandwine.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2F200911-xl-mama-changs-stir-fried-shrimp-and-scallions.jpg%3Fitok%3DdORctdLA&w=800&q=85" alt="recipe image" width="300" height="200">
+                      </div>
+                      <div class="rec_name_container">
+                          <p class="linkname">Stir-Fried Shrimp and Scallions</p>
+                      </div>
+                  </div>
+                  <div class="link-container">
+                      <div class="linkimg-container">
+                          <img class="linkimg" src="https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fcdn-image.foodandwine.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2F200911-xl-mama-changs-stir-fried-shrimp-and-scallions.jpg%3Fitok%3DdORctdLA&w=800&q=85" alt="recipe image" width="300" height="200">
+                      </div>
+                      <div class="rec_name_container">
+                          <p class="linkname">Stir-Fried Shrimp and Scallions</p>
+                      </div>
+                  </div>
+                  <div class="link-container">
+                      <div class="linkimg-container">
+                          <img class="linkimg" src="https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fcdn-image.foodandwine.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2F200911-xl-mama-changs-stir-fried-shrimp-and-scallions.jpg%3Fitok%3DdORctdLA&w=800&q=85" alt="recipe image" width="300" height="200">
+                      </div>
+                      <div class="rec_name_container">
+                          <p class="linkname">Stir-Fried Shrimp and Scallions</p>
+                      </div>
+                  </div>
+                  <div class="link-container">
+                      <div class="linkimg-container">
+                          <img class="linkimg" src="https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fcdn-image.foodandwine.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2F200911-xl-mama-changs-stir-fried-shrimp-and-scallions.jpg%3Fitok%3DdORctdLA&w=800&q=85" alt="recipe image" width="300" height="200">
+                      </div>
+                      <div class="rec_name_container">
+                          <p class="linkname">Stir-Fried Shrimp and Scallions</p>
+                      </div>
+                  </div>
+                  <div class="link-container">
+                      <div class="linkimg-container">
+                          <img class="linkimg" src="https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fcdn-image.foodandwine.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2F200911-xl-mama-changs-stir-fried-shrimp-and-scallions.jpg%3Fitok%3DdORctdLA&w=800&q=85" alt="recipe image" width="300" height="200">
+                      </div>
+                      <div class="rec_name_container">
+                          <p class="linkname">Stir-Fried Shrimp and Scallions</p>
+                      </div>
+                  </div>
+              </div>
 
-    <main class="category-page hidden">
-      <div class="category-container">
-        <div class="categoryimg-container">
-          <img class="categoryimg" src="https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fcdn-image.foodandwine.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2F200911-xl-mama-changs-stir-fried-shrimp-and-scallions.jpg%3Fitok%3DdORctdLA&w=800&q=85" alt="category image" width="300" height="200">
-        </div>
-        <div class="categoryname-container">
-          <p class="categoryname">Stir-Fried</p>
-        </div>
-      </div>
-    </main>
+          </div>
 
-    <main class="notfounded-container hidden"> <!-- for 404 -->
-      <h1>404</h1>
-      <h3>We could not find that page.</h3>
-    </main>
+          <div class="link-page hidden">
+              <!-- for index -->
+              <!-- only need one for template -->
+              <!-- Keep this if the upper design was not accepted-->
+              <div class="link-container">
+                  <div class="linkimg-container">
+                      <img class="linkimg" src="https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fcdn-image.foodandwine.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2F200911-xl-mama-changs-stir-fried-shrimp-and-scallions.jpg%3Fitok%3DdORctdLA&w=800&q=85" alt="recipe image" width="300" height="200">
+                  </div>
+                  <div class="linkname-container">
+                      <p class="linkname">Stir-Fried Shrimp and Scallions</p>
+                  </div>
+              </div>
+          </div>
+
+          <div class="recipe-page hidden">
+              <!-- for detailed recipe>
+              <!- only need one for template -->
+              <article class="recipe">
+                  <div class="name-container">
+                      <h2 class="name">Stir-Fried Shrimp and Scallions</h2>
+                  </div>
+                  <div class="img-container">
+                      <img class="img" src="https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fcdn-image.foodandwine.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2F200911-xl-mama-changs-stir-fried-shrimp-and-scallions.jpg%3Fitok%3DdORctdLA&w=800&q=85" alt="recipe image" with="600" height="400">
+                  </div>
+                  <div class="ingredient-container">
+                      <h3>Ingredients:</h3>
+                      <p class="ingredient">1/2 pounds shelled and deveined large shrimp 3 garlic cloves, sliced One 1-inch piece of fresh ginger, peeled and minced 1/2 teaspoons crushed red pepper, 1 large egg white, 2 teaspoons cornstarch, 3/4 cup ketchup, 1/2 cup low-sodium chicken broth, 1 tablespoon sugar, 1/2 teaspoons freshly ground pepper, 1/2 teaspoons kosher salt, 1/4 cup canola oil 3 scallions, thinly sliced 1/2 cup coarsely chopped cilantro.</p>
+                  </div>
+                  <div class="direction-container">
+                      <h3>Direction:</h3>
+                      <p class="direction">
+                          Step 1: In a large bowl, toss the shrimp with the garlic, ginger, red pepper, egg white and 1 teaspoon of the cornstarch until well-coated.
+                          Step 2: In a medium bowl, whisk the ketchup with the broth, sugar, pepper, salt and the remaining 1 teaspoon of cornstarch.
+                          Step 3: In a very large skillet, heat the oil until shimmering. Add the shrimp and stir-fry over high heat until they begin to turn pink. Add the ketchup mixture and simmer until the shrimp are cooked, about 2 minutes. Stir in the scallions and cilantro and serve.
+                      </p>
+                      <div>
+                      </div>
+              </article>
+          </div>
+
+          <div class="category-page hidden">
+              <div class="category-container">
+                  <div class="categoryimg-container">
+                      <img class="categoryimg" src="https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fcdn-image.foodandwine.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2F200911-xl-mama-changs-stir-fried-shrimp-and-scallions.jpg%3Fitok%3DdORctdLA&w=800&q=85" alt="category image" width="300" height="200">
+                  </div>
+                  <div class="categoryname-container">
+                      <p class="categoryname">Stir-Fried</p>
+                  </div>
+              </div>
+          </div>
+
+          <div class="notfounded-container hidden">
+              <!-- for 404 -->
+              <h1>404</h1>
+              <h3>We could not find that page.</h3>
+          </div>
+      </main>
 
   </body>
 
