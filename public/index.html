@@ -89,4 +89,36 @@
 
   <button type="button" id="create-recipe-button">+</button>
 
+  <div id="modal-backdrop" class=""></div>
+
+  <div id="create-recipe-modal" class="">
+    <div class="modal-dialog">
+        <div class="modal-header">
+          <h3>Create a Recipe</h3>
+          <button type="button" class="modal-close-button">&times;</button>
+        </div>
+
+        <div class="modal-body">
+          <div class="recipe-inpit-element">
+          <label for="recipe-url-input">Image URL</label>
+          <textarea id="recipe-url-input"></textarea>
+        </div>
+        <div class="recipe-inpit-element">
+          <label for="recipe-ingredient-input">Ingredients</label>
+          <textarea id="recipe-ingredient-input"></textarea>
+        </div>
+        <div class="recipe-inpit-element">
+          <label for="recipe-direction-input">Direction</label>
+          <textarea id="recipe-direction-input"></textarea>
+        </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="modal-cancel-button">Cancel</button>
+          <button type="button" class="modal-accept-button">Create Recipe</button>
+        </div>
+      </div>
+    </div>
+
+
 </html>
