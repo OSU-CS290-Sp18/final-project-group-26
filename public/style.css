@@ -146,6 +146,16 @@ ul {
   text-align: center;
 }
 
+#navbar-search-button {
+  border: none;
+  background-color: white;
+}
+
+#navbar-search-button:hover {
+  cursor: pointer;
+  color: #24A3FE;
+}
+
 #create-recipe-button {
   position: fixed;
   font-size: 50px;
