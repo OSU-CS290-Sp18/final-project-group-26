@@ -1,30 +1,35 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
-  <head>
+<head>
 
     <meta charset="utf-8">
     <title>Chinese Recipe</title>
 
     <link rel="stylesheet" href="style.css" media="screen">
 
-     <script src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" defer></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" defer></script>
 
     <!--font-family: 'Hind', sans-serif;
         font-family: 'Indie Flower', cursive; -->
     <link href="https://fonts.googleapis.com/css?family=Hind:300,400,500,600,700|Indie+Flower" rel="stylesheet">
 
     <script src="index.js" charset="utf-8" defer></script>
-  </head>
+</head>
 
-  <body>
-	
+<body>
 
-		
-			{{> header}}
-				{{{body}}}
+    {{> header}}  
+    <!-- This will read the title and navbar -->
 
-   
+    {{{body}}}    
+    <!-- This will read the main body -->
+    <!-- The sub-page contain:
+            1. index page
+            2. category page
+            3. single-recipe page
+            4. 404 page -->
 
-  </body>
+
+</body>
 
 </html>
