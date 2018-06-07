@@ -24,9 +24,9 @@
       <nav class="navbar">
           <ul class="navlist">
               <!-- send request to server when click -->
-              <li class="navitem active"><a href="/">Recommend</a></li>
-              <li class="navitem"><a href="/category">Category</a></li>
-              <li class="navitem"><a href="/recipes">All Recipes</a></li>
+              <li class="navitem active" id="nav_recommend"><a href="/">Recommend</a></li>
+              <li class="navitem" id="nav_category"><a href="/category">Category</a></li>
+              <li class="navitem" id="nav_recipes"><a href="/recipes">All Recipes</a></li>
               <li class="navitem navbar-search">
                   <input type="text" id="navbar-search-input" placeholder="Search for recipe...">
                   <button type="button" id="navbar-search-button"><i class="fas fa-search"></i></button>
@@ -113,14 +113,14 @@
         final design-->
               <div class="left_bar">
                   <!-- This is the category bar on main page -->
-                  <ul class="main_cat_list">
+                  <ul class="cat_list">
                       <!-- This is the left list for index page-->
                       <!-- The link should be add later -->
-                      <li class="main_cat_element"><a href="/a">Meat</a></li>
-                      <li class="main_cat_element"><a href="/a">Seafood</a></li>
-                      <li class="main_cat_element"><a href="/a">Vegetables</a></li>
-                      <li class="main_cat_element"><a href="/a">Soup</a></li>
-                      <li class="main_cat_element"><a href="/a">Dessert</a></li>
+                      <li class="cat_element"><a href="/a">Meat</a></li>
+                      <li class="cat_element"><a href="/a">Seafood</a></li>
+                      <li class="cat_element"><a href="/a">Vegetables</a></li>
+                      <li class="cat_element"><a href="/a">Soup</a></li>
+                      <li class="cat_element"><a href="/a">Dessert</a></li>
                   </ul>
               </div>
               <div class="recommend_container">
@@ -237,7 +237,7 @@
                           <li class="tag_specific_element"><a href="/a">Shellfish</a></li>
                           <li class="tag_specific_element"><a href="/a">Shrimp</a></li>
                           <li class="tag_specific_element"><a href="/a">Crab</a></li>
-                          <li class="tag_specific_element"><a href="/a">Krabby patty </a></li>
+                          <li class="tag_specific_element"><a href="/a">Krabby patty</a></li>
                           <li class="tag_specific_element"><a href="/a">Luke Skywalker</a></li>
                       </ul>
                   </div>
@@ -249,6 +249,20 @@
           <!-- *****************This is the Recipe page*****************-->
 
           <div class="page_container_recipe">
+
+              <div class="left_bar">
+                  <!-- This is the category bar on main display page -->
+                  <ul class="cat_list">
+                      <!-- This is the left list for index and detail recipe page-->
+                      <!-- The link should be add later -->
+                      <li class="cat_element"><a href="/a">Meat</a></li>
+                      <li class="cat_element"><a href="/a">Seafood</a></li>
+                      <li class="cat_element"><a href="/a">Vegetables</a></li>
+                      <li class="cat_element"><a href="/a">Soup</a></li>
+                      <li class="cat_element"><a href="/a">Dessert</a></li>
+                  </ul>
+              </div>
+
               <article class="recipe">
                   <div class="name-container">
                       <h2 class="name">Stir-Fried Shrimp and Scallions</h2>
@@ -260,19 +274,21 @@
                       <h3>Ingredients:</h3>
                       <div class="ingredient">
                           <ul class="ingredient_list">
-                              <li><p>1/2 pounds shelled and deveined large shrimp </p></li>
-                              <li><p>3 garlic cloves, </p></li>
-                              <li><p>sliced One 1-inch piece of fresh ginger, </p></li>
-                              <li><p>peeled and minced 1/2 teaspoons crushed red pepper, </p></li>
-                              <li><p>1 large egg white, 2 teaspoons cornstarch,</p></li>
-                              <li><p>3/4 cup ketchup, </p></li>
-                              <li><p>3/4 cup ketchup, </p></li>
-                              <li><p>1/2 cup low-sodium chicken broth, </p></li>
-                              <li><p>1 tablespoon sugar, </p></li>
-                              <li><p>1/2 teaspoons freshly ground pepper, </p></li>
-                              <li><p>1/2 teaspoons kosher salt,</p></li>
-                              <li><p>1/4 cup canola oil 3 scallions,</p></li>
-                              <li><p>thinly sliced 1/2 cup coarsely chopped cilantro.</p></li>
+                          <!-- When store the data, set each li element into a list,
+                               Everytime generate the template, use the list -->
+                              <li><p>1/2 pounds shelled and deveined large shrimp</p></li>
+                              <li><p>3 garlic cloves</p></li>
+                              <li><p>Sliced One 1-inch piece of fresh ginger</p></li>
+                              <li><p>Peeled and minced 1/2 teaspoons crushed red pepper</p></li>
+                              <li><p>1 large egg white, 2 teaspoons cornstarch</p></li>
+                              <li><p>3/4 cup ketchup</p></li>
+                              <li><p>3/4 cup ketchup</p></li>
+                              <li><p>1/2 cup low-sodium chicken broth</p></li>
+                              <li><p>1 tablespoon sugar</p></li>
+                              <li><p>1/2 teaspoons freshly ground pepper</p></li>
+                              <li><p>1/2 teaspoons kosher salt</p></li>
+                              <li><p>1/4 cup canola oil 3 scallions</p></li>
+                              <li><p>Thinly sliced 1/2 cup coarsely chopped cilantro</p></li>
                           </ul> 
                       </div> 
                   </div>
@@ -280,6 +296,7 @@
                       <h3>Direction:</h3>
                       <div class="direction">
                           <ol class="direction_list">
+                          <!-- The same as the ingredient list -->
                               <li><p>In a large bowl, toss the shrimp with the garlic, ginger, red pepper, egg white and 1 teaspoon of the cornstarch until well-coated.</p></li>
                               <li><p>In a medium bowl, whisk the ketchup with the broth, sugar, pepper, salt and the remaining 1 teaspoon of cornstarch.</p></li>
                               <li><p>In a very large skillet, heat the oil until shimmering. Add the shrimp and stir-fry over high heat until they begin to turn pink. Add the ketchup mixture and simmer until the shrimp are cooked, about 2 minutes. Stir in the scallions and cilantro and serve.</p></li>
@@ -296,6 +313,4 @@
 
   </body>
 
-  <button type="button" id="create-recipe-button">+</button>
-
-</html>
+  <button type="but

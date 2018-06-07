@@ -21,8 +21,7 @@ header {
   padding-top: 15px;
 }
 
-ul {
-  list-style-type: none;
+.navbar ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -30,10 +29,10 @@ ul {
 }
 
 .navbar {
-  position: relative;
-  box-shadow: 2px 2px 2px grey;
-  position: sticky;
-  top: 0;
+    position: relative;
+    box-shadow: 2px 2px 2px grey;
+    position: sticky;
+    top: 0;
 }
 
 .navitem {
@@ -200,12 +199,18 @@ ul {
 
 
 
+/*****This is for navi bar*****/
+
+.navitem{
+    list-style-type: none;
+}
 
 
 
 
 
 
+/*****This is for main display screen*****/
 
 .display_container {
     position: fixed;
@@ -229,10 +234,10 @@ ul {
     border: 5px none blue;
     padding-left: 20px;
     width: 1400px;
-    height: auto;
-    display: none;
+    height: 100%;
+    display: flex;
     flex-direction: column;
-    background-color: #e8e8e8;
+    background-color: #F4F5F5;
 }
 
 .page_container_index {
@@ -240,18 +245,19 @@ ul {
     border: 5px none blue;
     padding: 0px;
     width: 1400px;
-    height: auto;
-    display: none;
+    height: 100%;
+    display: flex;
     background-color: #F4F5F5;
 }
 
 .page_container_recipe {
     position: relative;
-    border: 5px none blue;
-    padding-left: 20px;
+    border: 5px none red;
+    padding-left: 0px;
     width: 1380px;
     height: 100%;
     display: flex;
+    background-color: #F4F5F5;
 }
 
 
@@ -267,21 +273,28 @@ ul {
     flex-shrink: 0;
 }
 
-.main_cat_list {
+/*
+*This three cat_list is used for the left list on both the index and single recipe page.
+*/
+
+.cat_list {
     border: 5px none  red;
     background-color: #F4F5F5;
 }
 
-.main_cat_element {
+.cat_element {
     border: 5px none  yellow;
     margin-bottom: 10px;
 }
 
-.main_cat_element a {
+.cat_element a {
     text-decoration: none;
     color: black;
     font-size: 22px;
 }
+
+
+
 
 .main_cat_element a:hover {
     text-decoration: none;
@@ -312,6 +325,8 @@ ul {
 .cat_block {
     border: 5px none black;
     height: 300px;
+    flex-grow: 0;
+    flex-shrink: 0;
     margin-bottom: 20px;
     display: flex;
     flex-direction: row;
@@ -364,5 +379,19 @@ ul {
 /*****This is for the single recipe page*****/
 
 .ingredient_list {
-    background-color: #F4F5F5;
+    background-color: #F4F5F5;   
+}
+
+.ingredient_list li{
+    list-style-type: circle;
+}
+
+.direction_list {
+    /*list-style-type: ;*/
+}
+
+.recipe {
+    border: 5px none blue;
+    margin: 0px;
+    padding-left: 50px;
 }
