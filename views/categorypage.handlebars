@@ -1,0 +1,38 @@
+<main class="display_container">
+    <!-- This is the main display container, content inside this will
+    change for different page. -->
+    <!-- *****************This is the Index page*****************-->
+
+<!-- *****************This is the Category page*****************-->
+
+    <div class="page_container_category">
+        <!-- This is what should be shared -->
+        <h1 class="category_title">Category</h1>
+        <!-- This is the title of the whole page-->
+        
+        
+        {{#each cat_class}}
+        <!--The cat_class is a list contain the name and the elements of a cat class, such as:
+            {
+                name: Meat
+                element: {
+                    Pork,
+                    Beef,
+                    Chicken,
+                    Lamb,
+                    Turkey,
+                    Harry Potter
+                }
+            }
+            All this stuff will be passed to the cat_block template-->
+
+            {{> cat_block}}
+            <!-- This is the block template for each main category,
+                Such as meat, seafood, veges.... -->
+
+        {{/each}}
+
+
+    </div>
+
+</main>

@@ -1,0 +1,31 @@
+<main class="display_container">
+    <!-- This is the main display container, content inside this will
+    change for different page. -->
+    <!-- *****************This is the Index page*****************-->
+
+    <div class="page_container_index">
+        <!-- For the main display screen for main content -->
+
+        <div class="left_bar">
+            <!-- This is the category bar on main page -->
+            
+            {{> cat_list}}
+            <!-- This is the left list for index page-->
+            <!-- The link should be add later -->
+                
+        </div>
+        <div class="recommend_container">
+            <!-- This is the container to display recommanded
+            dishes -->
+            
+            {{#each recommands}}
+            <!-- The 'recommands' is a list contain the detail for the 
+                 recommandation recipe, basically is the 'name' and 'image_url'-->
+                {{> link_container}}
+                <!-- This is the container template for simple recipe -->
+            {{/each}}
+
+        </div>
+    </div>
+
+</main>
