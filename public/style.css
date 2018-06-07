@@ -2,13 +2,13 @@ body {
   font-family: 'Hind', sans-serif;
   background-color: #F4F5F5;
   margin: 0;
+  background-image: url("bg.png");
 }
 
 header {
-  background:linear-gradient(to right,#24FEF6, #24A3FE);
+  background:linear-gradient(to right,#041522, #24A3FE);
   height: 100px;
   length: auto;
-  box-shadow: 2px 2px 2px grey;
 }
 
 .site-title {
@@ -26,11 +26,10 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #FFFFFF;
+  background-color: rgba(255,255,255);
 }
 
 .navbar {
-  position: relative;
   box-shadow: 2px 2px 2px grey;
   position: sticky;
   top: 0;
