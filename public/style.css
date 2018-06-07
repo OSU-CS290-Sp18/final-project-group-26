@@ -80,6 +80,7 @@ ul {
   height: 250px;
   margin: 20px;
   box-shadow: 2px 2px 2px grey;
+  border-radius: 15px;
 }
 
 .link-container:hover{
@@ -121,6 +122,7 @@ ul {
   height: 250px;
   border: 1px solid #dadada;
   margin: 20px;
+  border-radius: 15px;
 }
 
 .categoryimg {
