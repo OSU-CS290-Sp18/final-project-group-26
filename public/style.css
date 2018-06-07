@@ -26,7 +26,7 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: rgba(255,255,255);
+  background-color: rgba(255,255,255,0.9);
 }
 
 .navbar {
@@ -149,7 +149,7 @@ ul {
 
 #navbar-search-button {
   border: none;
-  background-color: white;
+  background-color: rgba(0,0,0,0);
 }
 
 #navbar-search-button:hover {
@@ -265,6 +265,22 @@ ul {
 .recipe-input-element textarea {
   height: 100px;
   width: 400px;
+}
+
+select {
+  font-family: 'Hind', sans-serif;
+  font-size: 15px;
+  height:40px;
+  width: 150px;
+}
+
+option {
+  font-family: 'Hind', sans-serif;
+  font-size: 15px;
+}
+
+#recipe-url-input {
+  height: 50px;
 }
 
 .modal-footer {

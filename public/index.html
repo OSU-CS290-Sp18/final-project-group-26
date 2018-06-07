@@ -34,7 +34,7 @@
       </ul>
     </nav>
 
-    <main class="link-page "> <!-- for index -->
+    <main class="link-page hidden"> <!-- for index -->
       <!-- only need one for template -->
       <div class="link-container">
         <div class="linkimg-container">
@@ -69,7 +69,7 @@
       </article>
     </main>
 
-    <main class="category-page">
+    <main class="category-page hidden">
       <div class="category-container">
         <div class="categoryimg-container">
           <img class="categoryimg" src="https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fcdn-image.foodandwine.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2F200911-xl-mama-changs-stir-fried-shrimp-and-scallions.jpg%3Fitok%3DdORctdLA&w=800&q=85" alt="category image" width="300" height="200">
@@ -89,9 +89,9 @@
 
   <button type="button" id="create-recipe-button">+</button>
 
-  <div id="modal-backdrop" class="hidden"></div>
+  <div id="modal-backdrop" class=""></div>
 
-  <div id="create-recipe-modal" class="hidden">
+  <div id="create-recipe-modal" class="">
     <div class="modal-dialog">
         <div class="modal-header">
           <h3>Create a Recipe</h3>
@@ -100,17 +100,26 @@
 
         <div class="modal-body">
           <div class="recipe-input-element">
-          <label for="recipe-url-input">Image URL</label>
-          <textarea id="recipe-url-input"></textarea>
-        </div>
-        <div class="recipe-input-element">
-          <label for="recipe-ingredient-input">Ingredients</label>
-          <textarea id="recipe-ingredient-input"></textarea>
-        </div>
-        <div class="recipe-input-element">
-          <label for="recipe-direction-input">Direction</label>
-          <textarea id="recipe-direction-input"></textarea>
-        </div>
+            <label for="recipe-url-input">Image URL</label>
+            <textarea id="recipe-url-input"></textarea>
+          </div>
+          <div class="recipe-input-element">
+            <label for="recipe-ingredient-input">Ingredients</label>
+            <textarea id="recipe-ingredient-input"></textarea>
+          </div>
+          <div class="recipe-input-element">
+            <label for="recipe-direction-input">Direction</label>
+            <textarea id="recipe-direction-input"></textarea>
+          </div>
+          <div class="recipe-input-element">
+            <label for="recipe-category-input">Category</label>
+            <select id="recipe-category-input">
+               <option value="Stir-Fried">Stir-Fried</option>
+               <option value="Seafood">Seafood</option>
+               <option value="Soup">Soup</option>
+               <option value="Others">Others</option>
+            </select>
+          </div>
         </div>
 
         <div class="modal-footer">
