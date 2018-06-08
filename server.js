@@ -19,6 +19,19 @@ var recipe_obj = {
     ingredient: "1/2 pounds shelled and deveined large shrimp; 3 garlic clovesSliced One; 1-inch piece of fresh ginger",
     direction: "Step 1: In a large bowl, toss the shrimp with the garlic, ginger, red pepper, egg white and 1 teaspoon of the cornstarch until well-coated; Step 2: In a medium bowl, whisk the ketchup with the broth, sugar, pepper, salt and the remaining 1 teaspoon of cornstarch; Step 3: In a very large skillet, heat the oil until shimmering. Add the shrimp and stir-fry over high heat until they begin to turn pink. Add the ketchup mixture and simmer until the shrimp are cooked, about 2 minutes. Stir in the scallions and cilantro and serve."
 };
+
+var category_list =[
+    {
+        name: 'Meat',
+        photoURL: 'Photos/meat.jpg'
+    },{
+        name: 'Seafood',
+        photoURL: 'Photos/seafood.jpg'
+    },{
+        name: 'Vegetable',
+        photoURL: 'Photos/vegetable.png'
+    }
+]
     
 var recipe_list = [
     recipe_obj,
@@ -48,7 +61,9 @@ app.use(express.static('public'));
 //Use to respond to the request of the category page
 
 app.get('/category', function (req, res) {
-    res.status(200).render('Category');
+    res.status(200).render('Category', {
+        category_recipe: category_list
+    });
 });
 
 

@@ -1,19 +1,25 @@
 <main class="display_container">
     <!-- This is the main display container, content inside this will
     change for different page. -->
-    <!-- *****************This is the Index page*****************-->
-
-<!-- *****************This is the Category page*****************-->
+    <!-- *****************This is the Category page*****************-->
 
     <div class="page_container_category">
         <!-- This is what should be shared -->
-        <h1 class="category_title">Category</h1>
-        <!-- This is the title of the whole page-->
-        
 
-        {{> CategoryTemplate}}
-        <!-- This is the block template for main category -->
+        <div class="left_bar">
+            <!-- This is the category bar on category page -->
+            {{> Bar}}
+        </div>
 
+        <div class="category_display_container">
+            <!-- This container used to display the simple recipe for
+            specific category such as recipe for Meat, or for Seafood.-->
+
+            {{#each category_recipe}}
+                {{> SimpleRecipe}}
+            {{/each}}
+
+        </div>
 
     </div>
 

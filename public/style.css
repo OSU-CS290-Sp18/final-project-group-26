@@ -1,14 +1,15 @@
 body {
-  font-family: 'Hind', sans-serif;
-  background-color: #F4F5F5;
-  margin: 0;
+    font-family: 'Hind', sans-serif;
+    background-color: #F4F5F5;
+    margin: 0;
 }
 
+/*****This is for the header, which is only the site title 'chinese recipe'*****/
+
 header {
-  background:linear-gradient(to right,#24FEF6, #24A3FE);
-  height: 100px;
-  length: auto;
-  box-shadow: 2px 2px 2px grey;
+    background: linear-gradient(to right,#041522, #24A3FE);
+    height: 100px;
+    length: auto;
 }
 
 .site-title {
@@ -21,15 +22,16 @@ header {
   padding-top: 15px;
 }
 
+/*****This is for the navbar*****/
 .navbar ul {
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #FFFFFF;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgba(255,255,255,0.9);
 }
 
 .navbar {
-    position: relative;
     box-shadow: 2px 2px 2px grey;
     position: sticky;
     top: 0;
@@ -56,7 +58,8 @@ header {
 }
 
 .active a {
-  font-size: 20px;
+    font-size: 20px;
+    color: #24A3FE;
 }
 
 .navitem a:hover {
@@ -155,44 +158,6 @@ header {
   color: #24A3FE;
 }
 
-#create-recipe-button {
-  position: fixed;
-  font-size: 50px;
-  color: white;
-  right: 50px;
-  bottom: 50px;
-  width: 80px;
-  height: 80px;
-  background-color: #FFC300;
-  border-radius: 40px;
-  border: none;
-  transition: transform 2s;
-}
-
-@keyframes colorChange {
-    0% {background-color: #FFC300;}
-    100% {background-color: #23E5D2;}
-}
-#create-recipe-button:hover {
-  cursor:pointer;
-  background-color: #23E5D2;
-  transform: rotate(360deg);
-  animation-name: colorChange;
-  animation-duration: 2s;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /*****This is for navi bar*****/
@@ -203,20 +168,24 @@ header {
 
 
 
-
-
-
 /*****This is for main display screen*****/
 
 .display_container {
     position: fixed;
-    border: 5px none  red;
+    border: 5px none red;
     width: 100%;
     top: 165px;
     bottom: 0px;
     overflow: scroll;
     display: flex;
     justify-content: center;
+    /*****
+        This used to be the background of the main body, but for here since
+        the display_container is the main display screen, so the background moves
+        here otherwise it will be covered by attribute of display_container if set
+        the img for body not this one.
+    *****/
+    background-image: url("Photos/bg.png");
 }
 
 @media screen and (max-width: 1520px) {
@@ -225,6 +194,8 @@ header {
     }
 }
 
+/*****This is the page container inside the display container for each page*****/
+
 .page_container_category {
     position: relative;
     border: 5px none blue;
@@ -232,8 +203,6 @@ header {
     width: 1500px;
     height: 100%;
     display: flex;
-    flex-direction: column;
-    background-color: #F4F5F5;
 }
 
 .page_container_index {
@@ -243,17 +212,15 @@ header {
     width: 1500px;
     height: 100%;
     display: flex;
-    background-color: #F4F5F5;
 }
 
 .page_container_recipe {
     position: relative;
     border: 5px none red;
     padding-left: 0px;
-    width: 1480px;
+    width: 1500px;
     height: 100%;
     display: flex;
-    background-color: #F4F5F5;
 }
 
 .page_container_all_recipe {
@@ -263,18 +230,16 @@ header {
     width: 1500px;
     height: 100%;
     display: flex;
-    background-color: #F4F5F5;
 }
 
 .page_container_add_module {
     position: relative;
-    border: 5px solid red;
+    border: 5px none red;
     padding-left: 0px;
     width: 1500px;
     height: 100%;
     display: flex;
     justify-content: center;
-    background-color: #F4F5F5;
 }
 
 
@@ -297,27 +262,33 @@ header {
 */
 
 .cat_list {
-    border: 5px none  red;
-    background-color: #F4F5F5;
+    list-style-type: none;
+    border: 5px none red;
+    padding: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: rgba(150,150,150,0.1);
+    border-radius: 15px;
 }
 
 .cat_element {
-    border: 5px none  yellow;
-    margin-bottom: 10px;
+    border-radius: 15px;
+    border: 1px solid rgba(150,150,150,0);
 }
 
 .cat_element a {
+    font-family: 'Indie Flower', cursive;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 10px;
+    display: block;
+    color: #000;
     text-decoration: none;
-    color: black;
-    font-size: 22px;
+    text-align: center;
 }
-
-
-
-
-.main_cat_element a:hover {
+.cat_element:hover {
     text-decoration: none;
-    color: palevioletred;
+    border: 1px solid rgba(150,150,150,0.8);
 }
 
 .recommend_container {
@@ -337,60 +308,17 @@ header {
 
 /*****This is for the category page*****/
 
-.category_title {
-    border: 5px none red;
-}
-
-.cat_block {
-    border: 5px none black;
-    height: 300px;
+.category_display_container {
+    position: relative;
+    border: 5px none yellow;
+    padding: 0px;
+    display: flex;
+    width: 1200px;
+    height: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
     flex-grow: 0;
     flex-shrink: 0;
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: row;
-}
-
-.cat_title{
-    border: 5px none yellow;
-    padding-left: 50px;
-    margin: 0px;
-    width: 250px;
-    height: 200px;
-}
-
-.cat_title a {
-    vertical-align: central;
-    font-size: 30px;
-}
-
-.content_block {
-    border: 5px none green;
-    width: 1400px;
-}
-
-.tag_specific {
-    border: 5px none blue;
-    width: 300px;
-    float: left;
-    background-color: inherit;
-}
-
-.tag_specific_element {
-    border: 5px none purple;
-    margin: 10px;
-}
-
-.tag_specific_element a{
-    border: 5px none purple;
-    text-decoration: none;
-    color: black;
-}
-
-.tag_specific_element a:hover {
-    border: 5px none purple;
-    text-decoration: none;
-    color: palevioletred;
 }
 
 
@@ -430,40 +358,154 @@ header {
 
 /*****THis is for button and add module*****/
 
-.module_container {
-    border: 5px solid green;
-    padding-top: 20px;
-    width: 1000px;
+#create-recipe-button {
+    position: fixed;
+    font-size: 50px;
+    color: white;
+    right: 50px;
+    bottom: 50px;
+    width: 80px;
+    height: 80px;
+    background-color: #FFC300;
+    border-radius: 40px;
+    border: none;
+    transition: transform 2s;
 }
 
-.add_module {
-    border: 5px solid black;
-    margin-bottom: 20px;
+@keyframes colorChange {
+    0% {
+        background-color: #FFC300;
+    }
+
+    100% {
+        background-color: #23E5D2;
+    }
+}
+
+#create-recipe-button:hover {
+    cursor: pointer;
+    background-color: #23E5D2;
+    transform: rotate(360deg);
+    animation-name: colorChange;
+    animation-duration: 2s;
+}
+
+/*This is add module*/
+
+#create-recipe-modal {
+    font-family: 'Indie Flower', cursive;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.modal-dialog {
+    width: auto;
+    max-width: 600px;
+    min-width: 400px;
+    min-height: 600px;
+    max-height: 800px;
+    margin: 40px auto;
+    border-radius: 15px;
+}
+
+.modal-header {
+    position: relative;
+    padding: 15px 20px;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 35px;
+}
+
+.modal-close-button {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 35px;
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.recipe-input-element {
     display: flex;
-    flex-direction: row;
-    align-content: center;
-}
-
-.add_module_title {
-    border: 5px solid yellow;
-    width: 180px;
-}
-
-.add_module_input {
-    height: 50px;
-    width: 500px;
-    margin-top: 20px;
+    align-items: center;
     font-size: 20px;
+    margin: 10px 0;
 }
 
-.add_module_enter_block {
-    border: 5px solid purple;
+.recipe-input-element label {
+    font-weight: 600;
+    flex: 1 75px;
+    margin-right: 10px;
+}
+
+.recipe-input-element input,
+.recipe-input-element textarea {
+    flex: 6 200px;
+    padding: 8px;
+    font-size: 20px;
+    border: 1px solid #aaa;
+}
+
+.recipe-input-element textarea {
     height: 100px;
-    width: 700px;
+    width: 400px;
 }
 
-.add_module_add_list {
-    
+select {
+    font-family: 'Hind', sans-serif;
+    font-size: 15px;
+    height: 40px;
+    width: 150px;
+}
+
+option {
+    font-family: 'Hind', sans-serif;
+    font-size: 15px;
+}
+
+#recipe-url-input {
+    height: 50px;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 10px 20px 10px;
+}
+
+.modal-footer button {
+    font-size: 20px;
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #333;
+    border-radius: 5px;
+    padding: 10px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.modal-footer .modal-cancel-button:hover {
+    background-color: #eee;
+}
+
+.modal-footer .modal-accept-button {
+    background-color: #24FEF6;
+    color: #fff;
+}
+
+.modal-footer .modal-accept-button:hover {
+    background-color: #087dde;
 }
 
 

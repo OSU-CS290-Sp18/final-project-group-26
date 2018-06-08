@@ -5,24 +5,25 @@
 
     <div class="page_container_index">
         <!-- For the main display screen for main content -->
+        
 
         <div class="left_bar">
             <!-- This is the category bar on main page -->
-            
             {{> Bar}}
             <!-- This is the left list for index page-->
             <!-- The link should be add later -->
-                
+
         </div>
         <div class="recommend_container">
             <!-- This is the container to display recommanded
             dishes -->
-            
             {{#each recommands}}
-            <!-- The 'recommands' is a list contain the detail for the 
+            <!-- The 'recommands' is a list contain the detail for the
                  recommandation recipe, basically is the 'name' and 'image_url'-->
+                
                 {{> SimpleRecipe}}
-                <!-- This is the container template for simple recipe -->
+                    <!-- This is the container template for simple recipe -->
+
             {{/each}}
 
         </div>
