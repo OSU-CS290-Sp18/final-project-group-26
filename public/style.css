@@ -99,7 +99,8 @@ ul {
 }
 
 .recipe-page {
-  margin: 150px;
+  margin-left: 300px;
+  margin-right: 300px;
   margin-top: 50px;
   display: flex;
   flex-direction: column;
@@ -311,6 +312,41 @@ option {
 
 .modal-footer .modal-accept-button:hover {
   background-color: #087dde;
+}
+
+.bar {
+  position:fixed;
+  z-index: 2050;
+  left:20px;
+  top: 200px;
+}
+
+.cat_list {
+  padding: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: rgba(150,150,150,0.1);
+  border-radius: 15px;
+}
+
+.cat_element{
+  border-radius: 15px;
+    border: 1px solid rgba(150,150,150,0);
+}
+
+.cat_element:hover {
+  border: 1px solid rgba(150,150,150,0.8);
+}
+
+.cat_element a {
+  font-family: 'Indie Flower', cursive;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 10px;
+  display:block;
+  color: #000;
+  text-decoration: none;
+  text-align: center;
 }
 
 .hidden {

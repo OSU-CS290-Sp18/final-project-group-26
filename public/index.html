@@ -5,15 +5,15 @@
     <meta charset="utf-8">
     <title>Chinese Recipe</title>
 
-    <link rel="stylesheet" href="style.css" media="screen">
+    <link rel="stylesheet" href="/style.css" media="screen">
 
-     <script src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" defer></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" defer></script>
 
     <!--font-family: 'Hind', sans-serif;
         font-family: 'Indie Flower', cursive; -->
     <link href="https://fonts.googleapis.com/css?family=Hind:300,400,500,600,700|Indie+Flower" rel="stylesheet">
 
-    <script src="index.js" charset="utf-8" defer></script>
+    <script src="/index.js" charset="utf-8" defer></script>
   </head>
 
   <body>
@@ -34,7 +34,7 @@
       </ul>
     </nav>
 
-    <main class="link-page hidden"> <!-- for index -->
+    <main class="link-page"> <!-- for index -->
       <!-- only need one for template -->
       <div class="link-container">
         <div class="linkimg-container">
@@ -46,7 +46,7 @@
       </div>
     </main>
 
-    <main class="recipe-page hidden"> <!-- for detailed recipe>
+    <main class="recipe-page"> <!-- for detailed recipe>
       <!- only need one for template -->
       <article class="recipe">
         <div class="name-container">
@@ -69,18 +69,18 @@
       </article>
     </main>
 
-    <main class="category-page hidden">
+    <main class="category-page">
       <div class="category-container">
         <div class="categoryimg-container">
           <img class="categoryimg" src="https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fcdn-image.foodandwine.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2F200911-xl-mama-changs-stir-fried-shrimp-and-scallions.jpg%3Fitok%3DdORctdLA&w=800&q=85" alt="category image" width="300" height="200">
         </div>
         <div class="categoryname-container">
-          <p class="categoryname">Stir-Fried</p>
+          <p class="categoryname">Seafood</p>
         </div>
       </div>
     </main>
 
-    <main class="notfounded-container hidden"> <!-- for 404 -->
+    <main class="notfounded-container"> <!-- for 404 -->
       <h1>404</h1>
       <h3>We could not find that page.</h3>
     </main>
@@ -89,9 +89,9 @@
 
   <button type="button" id="create-recipe-button">+</button>
 
-  <div id="modal-backdrop" class=""></div>
+  <div id="modal-backdrop" class="hidden"></div>
 
-  <div id="create-recipe-modal" class="">
+  <div id="create-recipe-modal" class="hidden">
     <div class="modal-dialog">
         <div class="modal-header">
           <h3>Create a Recipe</h3>
@@ -114,8 +114,10 @@
           <div class="recipe-input-element">
             <label for="recipe-category-input">Category</label>
             <select id="recipe-category-input">
-               <option value="Stir-Fried">Stir-Fried</option>
+               <option value="Meat">Meat</option>
                <option value="Seafood">Seafood</option>
+               <option value="Vegetables">Vegetables</option>
+               <option value="Dessert">Dessert</option>
                <option value="Soup">Soup</option>
                <option value="Others">Others</option>
             </select>
@@ -128,5 +130,16 @@
         </div>
       </div>
     </div>
+
+    <div class="bar">
+        <ul class="cat_list">
+          <li class="cat_element"><a href="/category/meat">Meat</a></li>
+          <li class="cat_element"><a href="/category/seafood">Seafood</a></li>
+          <li class="cat_element"><a href="/category/vegetables">Vegetables</a></li>
+          <li class="cat_element"><a href="/category/soup">Soup</a></li>
+          <li class="cat_element"><a href="/category/dessert">Dessert</a></li>
+          <li class="cat_element"><a href="/category/others">Others</a></li>
+        </ul>
+      </div>
 
 </html>

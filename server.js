@@ -11,33 +11,31 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
 
-
-//'main' 
-
-/*app.get('/', function(req,res){
-	
-		res.status(200).render('TwitPage',{
-			twits: twitarray
-		});
-		
+app.get('/', function(req,res){
+		res.status(200).render('AllRecipes');
 });
 
-app.get('*', function(req,res){
-	res.status(404).render('404');
-		
-	
-});*/
+app.get('/category', function(req,res){
+		res.status(200).render('Category');
+});
+
+app.get('/recipes', function(req,res){
+		res.status(200).render('AllRecipes');
+});
+
+app.get('/category/:category', function(req,res){
+		res.status(200).render('Category');
+});
+
+app.get('/recipes/:name', function(req,res){
+		res.status(200).render('SingleRecipe');
+});
+
 app.use(express.static('public'));
 
-
-
-
-
 app.get('*', function (req, res) {
-  res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
+  res.status(404).render('404');
 });
-
-
 
 app.listen(port, function () {
   console.log("== Server is listening on port", port);
