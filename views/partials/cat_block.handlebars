@@ -1,0 +1,16 @@
+<div class="cat_block">
+    <!-- This is the block for each main category,
+         Such as meat, seafood, veges.... -->
+    <h2 class="cat_title">
+        {{name}}
+    </h2>
+    <!-- This is the title for main category -->
+    <div class="content_block">
+        <ul class="tag_specific">
+            {{#each element}}
+                {{> tag_specific_element}}
+                <!--This is the <li> element for each sub-element under the name-->
+            {{/each}}
+        </ul>
+    </div>
+</div>

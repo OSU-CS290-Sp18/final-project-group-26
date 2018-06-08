@@ -2,13 +2,13 @@ body {
   font-family: 'Hind', sans-serif;
   background-color: #F4F5F5;
   margin: 0;
-  background-image: url("bg.png");
 }
 
 header {
-  background:linear-gradient(to right,#041522, #24A3FE);
+  background:linear-gradient(to right,#24FEF6, #24A3FE);
   height: 100px;
   length: auto;
+  box-shadow: 2px 2px 2px grey;
 }
 
 .site-title {
@@ -21,18 +21,18 @@ header {
   padding-top: 15px;
 }
 
-ul {
-  list-style-type: none;
+.navbar ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: rgba(255,255,255,0.9);
+  background-color: #FFFFFF;
 }
 
 .navbar {
-  box-shadow: 2px 2px 2px grey;
-  position: sticky;
-  top: 0;
+    position: relative;
+    box-shadow: 2px 2px 2px grey;
+    position: sticky;
+    top: 0;
 }
 
 .navitem {
@@ -80,7 +80,6 @@ ul {
   height: 250px;
   margin: 20px;
   box-shadow: 2px 2px 2px grey;
-  border-radius: 15px;
 }
 
 .link-container:hover{
@@ -122,7 +121,6 @@ ul {
   height: 250px;
   border: 1px solid #dadada;
   margin: 20px;
-  border-radius: 15px;
 }
 
 .categoryimg {
@@ -149,7 +147,7 @@ ul {
 
 #navbar-search-button {
   border: none;
-  background-color: rgba(0,0,0,0);
+  background-color: white;
 }
 
 #navbar-search-button:hover {
@@ -182,6 +180,225 @@ ul {
   animation-name: colorChange;
   animation-duration: 2s;
 }
+
+.hidden {
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*****This is for navi bar*****/
+
+.navitem{
+    list-style-type: none;
+}
+
+
+
+
+
+
+/*****This is for main display screen*****/
+
+.display_container {
+    position: fixed;
+    border: 5px none  red;
+    width: 100%;
+    top: 165px;
+    bottom: 0px;
+    overflow: scroll;
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (max-width: 1420px) {
+    .display_container {
+        justify-content: flex-start;
+    }
+}
+
+.page_container_category {
+    position: relative;
+    border: 5px none blue;
+    padding-left: 20px;
+    width: 1400px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #F4F5F5;
+}
+
+.page_container_index {
+    position: relative;
+    border: 5px none blue;
+    padding: 0px;
+    width: 1400px;
+    height: 100%;
+    display: flex;
+    background-color: #F4F5F5;
+}
+
+.page_container_recipe {
+    position: relative;
+    border: 5px none red;
+    padding-left: 0px;
+    width: 1380px;
+    height: 100%;
+    display: flex;
+    background-color: #F4F5F5;
+}
+
+
+
+/*****This is for the index page*****/
+
+.left_bar {
+    position: relative;
+    border: 5px none  green;
+    padding: 10px;
+    width: 150px;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+/*
+*This three cat_list is used for the left list on both the index and single recipe page.
+*/
+
+.cat_list {
+    border: 5px none  red;
+    background-color: #F4F5F5;
+}
+
+.cat_element {
+    border: 5px none  yellow;
+    margin-bottom: 10px;
+}
+
+.cat_element a {
+    text-decoration: none;
+    color: black;
+    font-size: 22px;
+}
+
+
+
+
+.main_cat_element a:hover {
+    text-decoration: none;
+    color: palevioletred;
+}
+
+.recommend_container {
+    position: relative;
+    border: 5px none yellow;
+    padding: 0px;
+    display: flex;
+    width: 1200px;
+    height: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+
+
+/*****This is for the category page*****/
+
+.category_title {
+    border: 5px none red;
+}
+
+.cat_block {
+    border: 5px none black;
+    height: 300px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.cat_title{
+    border: 5px none yellow;
+    padding-left: 50px;
+    margin: 0px;
+    width: 250px;
+    height: 200px;
+}
+
+.cat_title a {
+    vertical-align: central;
+    font-size: 30px;
+}
+
+.content_block {
+    border: 5px none green;
+    width: 1400px;
+}
+
+.tag_specific {
+    border: 5px none blue;
+    width: 300px;
+    float: left;
+    background-color: inherit;
+}
+
+.tag_specific_element {
+    border: 5px none purple;
+    margin: 10px;
+}
+
+.tag_specific_element a{
+    border: 5px none purple;
+    text-decoration: none;
+    color: black;
+}
+
+.tag_specific_element a:hover {
+    border: 5px none purple;
+    text-decoration: none;
+    color: palevioletred;
+}
+
+
+
+/*****This is for the single recipe page*****/
+
+.ingredient_list {
+    background-color: #F4F5F5;   
+}
+
+.ingredient_list li{
+    list-style-type: circle;
+}
+
+.direction_list {
+    /*list-style-type: ;*/
+}
+
+.recipe {
+    border: 5px none blue;
+    margin: 0px;
+    padding-left: 50px;
+}
+
+
+
+/*****This is for the add recipe module*****/
 
 #modal-backdrop {
   position: fixed;
@@ -316,3 +533,9 @@ option {
 .hidden {
   display: none;
 }
+
+
+.hidden {
+  display: none;
+}
+
