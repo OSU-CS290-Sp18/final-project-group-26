@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
   <head>
 
@@ -101,13 +101,9 @@
       <main class="display_container">
           <!-- This is the main display container, content inside this will
     change for different page. -->
-
-
-
-
           <!-- *****************This is the Index page*****************-->
 
-          <div class="page_container_index">
+          <div class="page_container_index hidden">
               <!-- For the main display screen for main content -->
               <!-- This 'test' is just for test purpose, will remove in
         final design-->
@@ -208,14 +204,14 @@
 
           <!-- *****************This is the Category page*****************-->
 
-          <div class="page_container_category">
+          <div class="page_container_category hidden">
               <!-- This is what should be shared -->
               <h1 class="category_title">Category</h1>
               <!-- This is the title of the whole page-->
 
               <div class="cat_block">
                   <!-- This is the block for each main category,
-                       Such as meat, seafood, veges.... -->
+            Such as meat, seafood, veges.... -->
                   <h2 class="cat_title">Meat</h2>
                   <!-- This is the title for main category -->
                   <div class="content_block">
@@ -248,7 +244,7 @@
 
           <!-- *****************This is the Recipe page*****************-->
 
-          <div class="page_container_recipe">
+          <div class="page_container_recipe hidden">
 
               <div class="left_bar">
                   <!-- This is the category bar on main display page -->
@@ -274,8 +270,8 @@
                       <h3>Ingredients:</h3>
                       <div class="ingredient">
                           <ul class="ingredient_list">
-                          <!-- When store the data, set each li element into a list,
-                               Everytime generate the template, use the list -->
+                              <!-- When store the data, set each li element into a list,
+                        Everytime generate the template, use the list -->
                               <li><p>1/2 pounds shelled and deveined large shrimp</p></li>
                               <li><p>3 garlic cloves</p></li>
                               <li><p>Sliced One 1-inch piece of fresh ginger</p></li>
@@ -289,65 +285,165 @@
                               <li><p>1/2 teaspoons kosher salt</p></li>
                               <li><p>1/4 cup canola oil 3 scallions</p></li>
                               <li><p>Thinly sliced 1/2 cup coarsely chopped cilantro</p></li>
-                          </ul> 
-                      </div> 
+                          </ul>
+                      </div>
                   </div>
                   <div class="direction-container">
                       <h3>Direction:</h3>
                       <div class="direction">
                           <ol class="direction_list">
-                          <!-- The same as the ingredient list -->
+                              <!-- The same as the ingredient list -->
                               <li><p>In a large bowl, toss the shrimp with the garlic, ginger, red pepper, egg white and 1 teaspoon of the cornstarch until well-coated.</p></li>
                               <li><p>In a medium bowl, whisk the ketchup with the broth, sugar, pepper, salt and the remaining 1 teaspoon of cornstarch.</p></li>
                               <li><p>In a very large skillet, heat the oil until shimmering. Add the shrimp and stir-fry over high heat until they begin to turn pink. Add the ketchup mixture and simmer until the shrimp are cooked, about 2 minutes. Stir in the scallions and cilantro and serve.</p></li>
                           </ol>
                       </div>
-                 </div>
+                  </div>
               </article>
           </div>
 
+
+
+          <!-- *****************This is the All Recipe page*****************-->
+
+          <div class="page_container_all_recipe hidden">
+              <!-- For the main display screen for main content -->
+              <!-- This 'test' is just for test purpose, will remove in
+        final design-->
+
+              <div class="all_recipe_container">
+                  <!-- This is the container to display recommanded
+            dishes -->
+                  <div class="link-container">
+                      <!-- only need one for template -->
+                      <!-- All others is for test purpose -->
+                      <div class="linkimg-container">
+                          <img class="linkimg" src="https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fcdn-image.foodandwine.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2F200911-xl-mama-changs-stir-fried-shrimp-and-scallions.jpg%3Fitok%3DdORctdLA&w=800&q=85" alt="recipe image" width="300" height="200">
+                      </div>
+                      <div class="rec_name_container">
+                          <p class="linkname">Stir-Fried Shrimp and Scallions</p>
+                      </div>
+                  </div>
+                  <div class="link-container">
+                      <div class="linkimg-container">
+                          <img class="linkimg" src="https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fcdn-image.foodandwine.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2F200911-xl-mama-changs-stir-fried-shrimp-and-scallions.jpg%3Fitok%3DdORctdLA&w=800&q=85" alt="recipe image" width="300" height="200">
+                      </div>
+                      <div class="rec_name_container">
+                          <p class="linkname">Stir-Fried Shrimp and Scallions</p>
+                      </div>
+                  </div>
+                  <div class="link-container">
+                      <div class="linkimg-container">
+                          <img class="linkimg" src="https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fcdn-image.foodandwine.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2F200911-xl-mama-changs-stir-fried-shrimp-and-scallions.jpg%3Fitok%3DdORctdLA&w=800&q=85" alt="recipe image" width="300" height="200">
+                      </div>
+                      <div class="rec_name_container">
+                          <p class="linkname">Stir-Fried Shrimp and Scallions</p>
+                      </div>
+                  </div>
+                  <div class="link-container">
+                      <div class="linkimg-container">
+                          <img class="linkimg" src="https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fcdn-image.foodandwine.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2F200911-xl-mama-changs-stir-fried-shrimp-and-scallions.jpg%3Fitok%3DdORctdLA&w=800&q=85" alt="recipe image" width="300" height="200">
+                      </div>
+                      <div class="rec_name_container">
+                          <p class="linkname">Stir-Fried Shrimp and Scallions</p>
+                      </div>
+                  </div>
+                  <div class="link-container">
+                      <div class="linkimg-container">
+                          <img class="linkimg" src="https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fcdn-image.foodandwine.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2F200911-xl-mama-changs-stir-fried-shrimp-and-scallions.jpg%3Fitok%3DdORctdLA&w=800&q=85" alt="recipe image" width="300" height="200">
+                      </div>
+                      <div class="rec_name_container">
+                          <p class="linkname">Stir-Fried Shrimp and Scallions</p>
+                      </div>
+                  </div>
+                  <div class="link-container">
+                      <div class="linkimg-container">
+                          <img class="linkimg" src="https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fcdn-image.foodandwine.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2F200911-xl-mama-changs-stir-fried-shrimp-and-scallions.jpg%3Fitok%3DdORctdLA&w=800&q=85" alt="recipe image" width="300" height="200">
+                      </div>
+                      <div class="rec_name_container">
+                          <p class="linkname">Stir-Fried Shrimp and Scallions</p>
+                      </div>
+                  </div>
+                  <div class="link-container">
+                      <div class="linkimg-container">
+                          <img class="linkimg" src="https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fcdn-image.foodandwine.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2F200911-xl-mama-changs-stir-fried-shrimp-and-scallions.jpg%3Fitok%3DdORctdLA&w=800&q=85" alt="recipe image" width="300" height="200">
+                      </div>
+                      <div class="rec_name_container">
+                          <p class="linkname">Stir-Fried Shrimp and Scallions</p>
+                      </div>
+                  </div>
+                  <div class="link-container">
+                      <div class="linkimg-container">
+                          <img class="linkimg" src="https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fcdn-image.foodandwine.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2F200911-xl-mama-changs-stir-fried-shrimp-and-scallions.jpg%3Fitok%3DdORctdLA&w=800&q=85" alt="recipe image" width="300" height="200">
+                      </div>
+                      <div class="rec_name_container">
+                          <p class="linkname">Stir-Fried Shrimp and Scallions</p>
+                      </div>
+                  </div>
+                  <div class="link-container">
+                      <div class="linkimg-container">
+                          <img class="linkimg" src="https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fcdn-image.foodandwine.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2F200911-xl-mama-changs-stir-fried-shrimp-and-scallions.jpg%3Fitok%3DdORctdLA&w=800&q=85" alt="recipe image" width="300" height="200">
+                      </div>
+                      <div class="rec_name_container">
+                          <p class="linkname">Stir-Fried Shrimp and Scallions</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+
+
+
+          <!-- *****************This is the button and add module*****************-->
+
+
+          <!-- This is the add button -->
           <button type="button" id="create-recipe-button">+</button>
 
-          <div id="modal-backdrop" class=""></div>
-
-          <div id="create-recipe-modal" class="">
-            <div class="modal-dialog">
-                <div class="modal-header">
-                  <h3>Create a Recipe</h3>
-                  <button type="button" class="modal-close-button">&times;</button>
+          <!-- This is the add module -->
+          <div class="page_container_add_module">
+              <div class="module_container">
+                <div class="add_module">
+                    <div class="add_module_title">
+                        <h1>Name:</h1>
+                    </div>
+                    <input type="Text" class="add_module_input" placeholder="Please enter the name...">
                 </div>
-
-                <div class="modal-body">
-                  <div class="recipe-input-element">
-                    <label for="recipe-url-input">Image URL</label>
-                    <textarea id="recipe-url-input"></textarea>
-                  </div>
-                  <div class="recipe-input-element">
-                    <label for="recipe-ingredient-input">Ingredients</label>
-                    <textarea id="recipe-ingredient-input"></textarea>
-                  </div>
-                  <div class="recipe-input-element">
-                    <label for="recipe-direction-input">Direction</label>
-                    <textarea id="recipe-direction-input"></textarea>
-                  </div>
-                  <div class="recipe-input-element">
-                    <label for="recipe-category-input">Category</label>
-                    <select id="recipe-category-input">
-                       <option value="Stir-Fried">Stir-Fried</option>
-                       <option value="Seafood">Seafood</option>
-                       <option value="Soup">Soup</option>
-                       <option value="Others">Others</option>
-                    </select>
-                  </div>
+                <div class="add_module">
+                    <div class="add_module_title">
+                        <h1>Photo-URL:</h1>
+                    </div>
+                    <input type="Text" class="add_module_input" placeholder="Please enter the URL of the photo...">
                 </div>
+                <div class="add_module">
+                    <div class="add_module_title">
+                        <h1>Ingredients:</h1>
+                    </div>
+                    <div class="add_module_enter_block">
+                        <input type="Text" class="add_module_input" placeholder="Please enter the URL of the photo...">
+                    </div>
 
-                <div class="modal-footer">
-                  <button type="button" class="modal-cancel-button">Cancel</button>
-                  <button type="button" class="modal-accept-button">Create Recipe</button>
+                    <!-- This button is used to let user to add element to the ingredient
+                        list, everytime click the button, the 'add_module_enter_block' 
+                        should add an input area, and increase the 'height' attribute by 
+                        100px. -->
+                    <button class="add_module_add_list" id="ingredient_button">
+                        +
+                    </button>
+                </div>
+                <div class="add_module">
+                    <div class="add_module_title">
+                        <h1>Directions:</h1>
+                    </div>
+                    <div class="add_module_enter_block">
+                        <input type='Text' class="add_module_direction_input" placeholder="Please enter the single step...">
+                    </div>
                 </div>
               </div>
-            </div>
-      
+          </div>
+
+
+
       </main>
 
   </body>
