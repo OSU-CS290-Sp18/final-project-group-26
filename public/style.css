@@ -78,7 +78,7 @@ ul {
 .link-container {
   background-color: white;
   width: 320px;
-  height: 250px;
+  height: auto;
   margin: 20px;
   box-shadow: 2px 2px 2px grey;
   border-radius: 15px;

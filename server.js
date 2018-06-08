@@ -11,31 +11,31 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
 
-app.get('/', function(req,res){
+app.get('/', function(req,res){ //for recemended page
 		res.status(200).render('AllRecipes',{
-			reco:true
+			reco:true // control navbar active tag
 		});
 });
 
-app.get('/category', function(req,res){
+app.get('/category', function(req,res){ // for category page
 		res.status(200).render('Category',{
 			cate:true
 		});
 });
 
-app.get('/recipes', function(req,res){
+app.get('/recipes', function(req,res){ // for all recipes page
 		res.status(200).render('AllRecipes',{
 			reci:true
 		});
 });
 
-app.get('/category/:category', function(req,res){
+app.get('/category/:category', function(req,res){ // for single category page
 		res.status(200).render('Category',{
 			cate:true
 		});
 });
 
-app.get('/recipes/:name', function(req,res){
+app.get('/recipes/:name', function(req,res){ // for single recipe page
 		res.status(200).render('SingleRecipe');
 });
 
