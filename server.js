@@ -12,19 +12,27 @@ app.set('view engine', 'handlebars');
 
 
 app.get('/', function(req,res){
-		res.status(200).render('AllRecipes');
+		res.status(200).render('AllRecipes',{
+			reco:true
+		});
 });
 
 app.get('/category', function(req,res){
-		res.status(200).render('Category');
+		res.status(200).render('Category',{
+			cate:true
+		});
 });
 
 app.get('/recipes', function(req,res){
-		res.status(200).render('AllRecipes');
+		res.status(200).render('AllRecipes',{
+			reci:true
+		});
 });
 
 app.get('/category/:category', function(req,res){
-		res.status(200).render('Category');
+		res.status(200).render('Category',{
+			cate:true
+		});
 });
 
 app.get('/recipes/:name', function(req,res){

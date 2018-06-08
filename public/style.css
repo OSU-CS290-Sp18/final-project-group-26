@@ -57,6 +57,7 @@ ul {
 
 .active a {
   font-size: 20px;
+  color: #24A3FE;
 }
 
 .navitem a:hover {
