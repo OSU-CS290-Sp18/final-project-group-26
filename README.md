@@ -204,8 +204,7 @@ page that shows all the information of that recipe.
 
 	2.2. Send request when click a specific recipe to generate the single recipe page.
 
-	2.3. Convert the ingredient and direction string into <li><p>...<p><li> element, see detail in
-		 **FullRecipe.handlebar**
+	2.3. Convert the ingredient and direction string into <li><p>...<p><li> element, see detail in **FullRecipe.handlebar**
 
 	2.4. The search functionality code for search bar.
 
