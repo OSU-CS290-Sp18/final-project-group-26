@@ -317,7 +317,6 @@ option {
 
 .bar {
   position:fixed;
-  z-index: 2050;
   left:20px;
   top: 200px;
 }
