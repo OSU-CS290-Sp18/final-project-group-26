@@ -50,7 +50,32 @@ var meat_list = [
     recipe_obj
 
 ];
+var sea_food_list = [
+    recipe_obj,
+    recipe_obj,
+];
+var veg_list = [
+    recipe_obj
 
+];
+var soup_list = [
+    recipe_obj,
+    recipe_obj,
+    recipe_obj,
+    recipe_obj,
+    recipe_obj,
+    recipe_obj,
+    recipe_obj,
+
+];
+var dessert_list = [
+    recipe_obj,
+    recipe_obj
+];
+var others_list = [
+    recipe_obj,
+    recipe_obj
+];
 var recipe_list = [
     recipe_obj,
     recipe_obj,
@@ -79,7 +104,7 @@ app.use(express.static('public'));
 
 //Use to respond to the request of the category page
 
-app.get('/category', function (req, res) {
+app.get('/category', function (req, res,nect) {
     res.status(200).render('Category', {
         category_recipe: category_list
     });
@@ -95,6 +120,35 @@ app.get('/category/meat', function(req, res){
 
 
 
+app.get('/category/seafood', function(req,res){
+    res.status(200).render('OneCategory',{
+        one_category: sea_food_list
+    });
+})
+
+app.get('/category/vegetables', function(req,res){
+    res.status(200).render('OneCategory',{
+        one_category: veg_list
+    });
+});
+
+app.get('/category/soup', function(req,res){
+    res.status(200).render('OneCategory',{
+        one_category: soup_list
+    });
+});
+
+app.get('/category/dessert', function(req,res){
+    res.status(200).render('OneCategory',{
+        one_category: dessert_list
+    });
+});
+
+app.get('/category/others', function(req,res){
+    res.status(200).render('OneCategory',{
+        one_category: others_list
+    });
+});
 
 
 //Use to respond to the request of the single recipe page
