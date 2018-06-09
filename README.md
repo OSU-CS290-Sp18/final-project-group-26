@@ -1,4 +1,4 @@
-# Chinese Recipe Beta ver 1.0    by Group 26
+# Chinese Recipe Beta ver 1.1    by Group 26
 
 This is the introduction for current v1.0 Beta Recipe application.
 
@@ -204,7 +204,7 @@ page that shows all the information of that recipe.
 
 	2.2. Send request when click a specific recipe to generate the single recipe page.
 
-	2.3. Convert the ingredient and direction string into <li><p>...<p><li> element, see detail in **FullRecipe.handlebar**
+	2.3. Convert the ingredient and direction string into '<li><p>...<p><li>' element, see detail in **FullRecipe.handlebar**
 
 	2.4. The search functionality code for search bar.
 
