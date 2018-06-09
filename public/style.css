@@ -205,6 +205,15 @@ header {
     display: flex;
 }
 
+#modal-backdrop {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.85);
+}
 .page_container_index {
     position: relative;
     border: 5px none blue;
@@ -255,6 +264,10 @@ header {
     width: 150px;
     flex-grow: 0;
     flex-shrink: 0;
+}
+
+.bar {
+  position: fixed;
 }
 
 /*
@@ -326,7 +339,7 @@ header {
 /*****This is for the single recipe page*****/
 
 .ingredient_list {
-    background-color: #F4F5F5;   
+    background-color: #F4F5F5;
 }
 
 .ingredient_list li{
@@ -399,17 +412,21 @@ header {
     bottom: 0;
     left: 0;
     right: 0;
+    z-index: 2000;
 }
 
 .modal-dialog {
-    width: auto;
-    max-width: 600px;
-    min-width: 400px;
-    min-height: 600px;
-    max-height: 800px;
-    margin: 40px auto;
-    border-radius: 15px;
+  width: auto;
+  max-width: 600px;
+  min-width: 400px;
+  min-height: 600px;
+  max-height: 800px;
+  margin: 40px auto;
+  background-color: white;
+  border: 3px solid #24A3FE;
+  border-radius: 15px;
 }
+
 
 .modal-header {
     position: relative;
