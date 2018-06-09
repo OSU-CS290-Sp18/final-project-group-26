@@ -43,6 +43,14 @@ var category_list =[
 
 ]
 
+
+var meat_list = [
+    recipe_obj,
+    recipe_obj,
+    recipe_obj
+
+];
+
 var recipe_list = [
     recipe_obj,
     recipe_obj,
@@ -65,6 +73,7 @@ app.get('/', function(req,res){
 		});
 });
 
+
 app.use(express.static('public'));
 
 
@@ -76,6 +85,17 @@ app.get('/category', function (req, res) {
     });
 });
 
+//Use to respond to which category is requested
+
+app.get('/category/meat', function(req, res){
+    res.status(200).render('OneCategory', {
+        one_category: meat_list
+    });
+});
+
+
+
+
 
 //Use to respond to the request of the single recipe page
 
@@ -84,6 +104,8 @@ app.get('/recipes', function (req, res) {
         recipes: recipe_list
     });
 });
+
+
 
 
 //Use to show the 404 page
