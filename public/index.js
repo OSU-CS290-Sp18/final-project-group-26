@@ -21,10 +21,11 @@ if (recommend_button) {
 
 // this function will unhide the showCreateRecipeModal
 function showCreateRecipeModal(){
-  var modalBackdrop = document.getElementsByClassName('hidden');
-  for(var i = 0 ; i < modalBackdrop.length; i++){
-        modalBackdrop[i].style.display = 'block';
-  }
+  var modalBackdrop = document.getElementById('modal-backdrop');
+  var CreateRecipeModal = document.getElementById('create-recipe-modal');
+
+  modalBackdrop.classList.remove('hidden');
+  CreateRecipeModal.classList.remove('hidden');
 }
 
 //This will be click the button of create-recipe function
