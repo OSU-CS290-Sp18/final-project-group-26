@@ -14,3 +14,34 @@ if (recommend_button) {
 }
 
 */
+
+
+
+
+
+// this function will unhide the showCreateRecipeModal
+function showCreateRecipeModal(){
+  var modalBackdrop = document.getElementsByClassName('hidden');
+  for(var i = 0 ; i < modalBackdrop.length; i++){
+        modalBackdrop[i].style.display = 'block';
+  }
+}
+
+//This will be click the button of create-recipe function
+var createButton = document.getElementById('create-recipe-button');
+if(createButton){
+   createButton.addEventListener('click', showCreateRecipeModal);
+}
+
+
+function hideModal(){
+  var modalBackdrop = document.getElementsByClassName('hidden');
+  for(var i = 0 ; i < modalBackdrop.length; i++){
+        modalBackdrop[i].style.display = 'none';
+  }
+}
+//This will be click hidden function
+
+var CancelBackdrop = document.querySelector('.modal-cancel-button');
+
+CancelBackdrop.addEventListener('click', hideModal);
