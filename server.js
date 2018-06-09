@@ -23,16 +23,26 @@ var recipe_obj = {
 var category_list =[
     {
         name: 'Meat',
-        photoURL: 'Photos/meat.jpg'
+        photoURL: 'Photos/Meat/meat.jpg'
     },{
         name: 'Seafood',
-        photoURL: 'Photos/seafood.jpg'
+        photoURL: 'Photos/Seafood/seafood.jpg'
     },{
         name: 'Vegetable',
-        photoURL: 'Photos/vegetable.png'
+        photoURL: 'Photos/Vegetable/vegetable.png'
+    },{
+        name: 'Soup',
+        photoURL: 'Photos/Soup/soup.jpg'
+    },{
+        name: 'Desset',
+        photoURL: 'Photos/Dessert/dessert.jpg'
+    },{
+        name: 'Others',
+        photoURL: 'Photos/Others/other.jpg'
     }
+
 ]
-    
+
 var recipe_list = [
     recipe_obj,
     recipe_obj,
@@ -47,12 +57,12 @@ var recipe_list = [
 ];
 
 
-//Use to respond to the request of the index/recommend page 
+//Use to respond to the request of the index/recommend page
 
-app.get('/', function(req,res){	
+app.get('/', function(req,res){
 		res.status(200).render('Index',{
 			recommands: recipe_list
-		});		
+		});
 });
 
 app.use(express.static('public'));
@@ -79,7 +89,7 @@ app.get('/recipes', function (req, res) {
 //Use to show the 404 page
 
 app.get('*', function(req,res){
-	res.status(404).render('404');	
+	res.status(404).render('404');
 });
 
 
