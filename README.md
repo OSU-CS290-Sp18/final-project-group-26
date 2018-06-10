@@ -1,6 +1,8 @@
-# Chinese Recipe Beta ver 1.1    by Group 26
+# Chinese Recipe Beta ver 1.2    by Group 26
 
-This is the introduction for current v1.0 Beta Recipe application.
+This is the introduction for current v1.2 Beta Recipe application.
+
+##Update v1.1 -> v1.2: See section "Update v1.2" at the bottom section.
 
 
 -------------------------------------------------------------------------------------------------
@@ -191,20 +193,79 @@ page that shows all the information of that recipe.
 
 1. The data base code:
 
-	1.1. Send request for specific data.
-
-	1.2. Receive data from data base.
-
-	1.3. Convert the data into an object list used to generate the page.
+	1.1. Add new object into data base.
 
 2. The JavaScript code:
 
-	2.1. For bars in index and category and single-recipe page, send the request for specific
-		 category's recipe.
+	2.1. Send request when click a specific recipe to generate the single recipe page.
 
-	2.2. Send request when click a specific recipe to generate the single recipe page.
-
-	2.3. Convert the ingredient and direction string into 'li><p' element, see detail in **FullRecipe.handlebar**
+	2.3. Convert the ingredient and direction from string with **';'** into listed paragraph element, see detail in **FullRecipe.handlebar**
 
 	2.4. The search functionality code for search bar.
+
+3. Server.js
+
+	3.1. Write function to handle request for single recipe page.
+
+
+-------------------------------------------------------------------------------------------------
+
+
+
+#Update
+
+
+##Update v1.2
+
+1. Create the server for recipe data:
+
+	Host Name: cluster0-bmwdm.gcp.mongodb.net
+	User Name: group26
+	Pass Word: group26
+	DataBase name: chinese_recipe
+	Collection name: recipe_list
+
+	**All new recipe should follow the new data structure and directly put into this collection.**
+
+	The recipe data are all already in the data base.
+
+
+2. Change the data structure of the recipe object:
+
+```
+	**Old:**
+
+	{
+	name: *The recipe's name*,
+	photoURL: *The URL of the photo that will be displayed*,
+	ingredient: *The ingredient of the recipe, separate each ingredient by ';'*,
+	direction: *The steps for how to make the recipe, separate each step by ';'*
+	}
+
+	**New:**
+
+	{
+	name: *The recipe's name*,
+	photoURL: *The URL of the photo that will be displayed*,
+	ingredient: *The ingredient of the recipe, separate each ingredient by ';'*,
+	direction: *The steps for how to make the recipe, separate each step by ';'*
+	category: *The category name with uppercase for first letter, such as Meat(not meat)*
+	recommend: *Value Yes if is the recommend recipe, don't change or add new value to this tag!!!*
+	}
+```
+
+
+3. Change the server.js to add the server code:
+
+	Added:
+	1). Index page
+	2). All Recipe page
+	3). Category page
+	4). Category: Specific_Category page
+
+
+4. Add photo of recipe into public/Photos.
+
+
+**See remained task for IV. What Still Need**
 

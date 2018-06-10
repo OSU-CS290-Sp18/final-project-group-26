@@ -26,16 +26,6 @@ var port = process.env.PORT || 3000;
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
-/*****This is the test object*****/
-//The structure of the test object should be changed, this is currently used for
-//alpha version of the web app
-var recipe_obj = {
-    name: 'Stir - mmmmFried Shrimp and Scallions',
-    photoURL: 'https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fcdn-image.foodandwine.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2F200911-xl-mama-changs-stir-fried-shrimp-and-scallions.jpg%3Fitok%3DdORctdLA&w=800&q=85',
-    ingredient: "1/2 pounds shelled and deveined large shrimp; 3 garlic clovesSliced One; 1-inch piece of fresh ginger",
-    direction: "Step 1: In a large bowl, toss the shrimp with the garlic, ginger, red pepper, egg white and 1 teaspoon of the cornstarch until well-coated; Step 2: In a medium bowl, whisk the ketchup with the broth, sugar, pepper, salt and the remaining 1 teaspoon of cornstarch; Step 3: In a very large skillet, heat the oil until shimmering. Add the shrimp and stir-fry over high heat until they begin to turn pink. Add the ketchup mixture and simmer until the shrimp are cooked, about 2 minutes. Stir in the scallions and cilantro and serve."
-
-};
 
 var category_list =[
     {
@@ -49,7 +39,7 @@ var category_list =[
     },{
         name: 'Vegetable',
         photoURL: 'Photos/Vegetable/vegetable.png',
-        href: '/category/Vegetables'
+        href: '/category/Vegetable'
     },{
         name: 'Soup',
         photoURL: 'Photos/Soup/soup.jpg',
@@ -66,55 +56,6 @@ var category_list =[
 
 ]
 
-
-var meat_list = [
-    recipe_obj,
-    recipe_obj,
-
-
-];
-var sea_food_list = [
-    recipe_obj,
-    recipe_obj,
-];
-var veg_list = [
-    recipe_obj
-
-];
-var soup_list = [
-    recipe_obj,
-    recipe_obj,
-    recipe_obj,
-    recipe_obj,
-    recipe_obj,
-    recipe_obj,
-    recipe_obj,
-
-];
-var dessert_list = [
-    recipe_obj,
-    recipe_obj
-];
-var others_list = [
-    recipe_obj,
-    recipe_obj
-];
-var recipe_list = [
-    recipe_obj,
-    recipe_obj,
-    recipe_obj,
-    recipe_obj,
-    recipe_obj,
-    recipe_obj,
-    recipe_obj,
-    recipe_obj,
-    recipe_obj,
-    recipe_obj
-];
-
-
-
-
 //using body bodyParser
 //app.use(bodyParser.jason());
 
@@ -128,13 +69,28 @@ var recipe_list = [
 //Use to respond to the request of the index/recommend page
 
 app.get('/', function(req,res){
-		res.status(200).render('Index',{
-			recommands: recipe_list
-		});
+    //Since the reommend recipe will have a tag:
+    //{recommend: "Yes"}
+    //So this command is used to find all the recipe with the tag recommend: "Yes"
+    //Under the 'recipe_list' collection
+    var recommendList = mongoDB.collection('recipe_list').find({recommend: "Yes"});
+
+    //This is used to convert the raw list we get into the array formation
+    //The 'recommend_list' argument here is just a name of the array object we passed into the function, it could be any other name if you like.
+    recommendList.toArray(function(err, recommend_list){
+        if (err){
+            res.status(500).send("== Error when fetching recipe_list from DB.")
+        } else {
+            res.status(200).render('Index',{
+                recommands: recommend_list
+            });
+        }
+    });   
 });
 
 
 app.use(express.static('public'));
+
 
 
 //Use to respond to the request of the category page
@@ -145,23 +101,40 @@ app.get('/category', function (req, res,nect) {
     });
 });
 
-//Use to respond to which category is requested
 
+
+//Use to respond to which category is requested
 
 app.get('/category/:Category', function(req,res){
     var cate = req.params.Category;
-    res.status(200).render('OneCategory',{
-        one_category: meat_list       //temporarily putting meat list in here to test
-    });
 
+    //This is used to find specific kind of recipe that have category tag with the value of cate.
+    var category_list_specific = mongoDB.collection("recipe_list").find({category: cate});
+
+    category_list_specific.toArray(function(err, cat_list){
+        if (err){
+            res.status(500).send("== Error when fetching recipe_list from DB.")
+        } else {
+            res.status(200).render('OneCategory',{
+                one_category: cat_list
+            });
+        }
+    }); 
 });
 
 
 //Use to respond to the request of the single recipe page
 
 app.get('/recipes', function (req, res) {
-    res.status(200).render('AllRecipes', {
-        recipes: recipe_list
+    var recipeCollection = mongoDB.collection('recipe_list');
+    recipeCollection.find().toArray(function(err, recipe_list){
+        if (err){
+            res.status(500).send("== Error when fetching recipe_list from DB.")
+        } else {
+            res.status(200).render('AllRecipes',{
+                recipes: recipe_list
+            });
+        }
     });
 });
 
