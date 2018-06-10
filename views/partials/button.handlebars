@@ -1,8 +1,8 @@
 <button type="button" id="create-recipe-button">+</button>
 
-  <div id="modal-backdrop" class=""></div>
+  <div id="modal-backdrop" class="hidden"></div>
 
-  <div id="create-recipe-modal" class="">
+  <div id="create-recipe-modal" class="hidden">
     <div class="modal-dialog">
         <div class="modal-header">
           <h3>Create a Recipe</h3>
@@ -21,6 +21,17 @@
         <div class="recipe-input-element">
           <label for="recipe-direction-input">Direction</label>
           <textarea id="recipe-direction-input"></textarea>
+        </div>
+        <div class="recipe-input-element">
+          <label for="recipe-category-input">Category</label>
+          <select id="recipe-category-input">
+            <option value="Meat">Meat</option>
+            <option value="Seafood">Seafood</option>
+            <option value="Vegetables">Vegetables</option>
+            <option value="Dessert">Dessert</option>
+            <option value="Soup">Soup</option>
+            <option value="Others">Others</option>
+          </select>
         </div>
         </div>
 

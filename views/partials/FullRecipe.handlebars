@@ -1,0 +1,31 @@
+<div class="name-container">
+    <h2 class="name">
+        {{name}}
+    </h2>
+</div>
+<div class="img-container">
+    <img class="img" src="{{photoURL}}" alt="recipe image" with="600" height="400">
+</div>
+<div class="ingredient-container">
+    <h3>Ingredients:</h3>
+    <div class="ingredient">
+        <ul class="ingredient_list">
+            <!-- When store the data, set each li element into a list,
+                Everytime generate the template, use the list -->
+
+            {{Ingredient}}
+            
+        </ul>
+    </div>
+</div>
+<div class="direction-container">
+    <h3>Direction:</h3>
+    <div class="direction">
+        <ol class="direction_list">
+            <!-- The same as the ingredient list -->
+
+            {{Direction}}
+
+        </ol>
+    </div>
+</div>
