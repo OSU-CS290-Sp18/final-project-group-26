@@ -2,7 +2,7 @@
 
 This is the introduction for current v1.2 Beta Recipe application.
 
-##Update v1.1 -> v1.2: See section "Update v1.2" at the bottom section.
+## Update v1.1 -> v1.2: See section "Update v1.2" at the bottom section.
 
 
 -------------------------------------------------------------------------------------------------
@@ -217,7 +217,7 @@ page that shows all the information of that recipe.
 
 ##Update v1.2
 
-1. Create the server for recipe data:
+**1. Create the server for recipe data:**
 
 	Host Name: cluster0-bmwdm.gcp.mongodb.net
 	User Name: group26
@@ -230,7 +230,7 @@ page that shows all the information of that recipe.
 	The recipe data are all already in the data base.
 
 
-2. Change the data structure of the recipe object:
+**2. Change the data structure of the recipe object:**
 
 ```
 	**Old:**
@@ -255,7 +255,7 @@ page that shows all the information of that recipe.
 ```
 
 
-3. Change the server.js to add the server code:
+**3. Change the server.js to add the server code:**
 
 	Added:
 	1). Index page
@@ -264,7 +264,7 @@ page that shows all the information of that recipe.
 	4). Category: Specific_Category page
 
 
-4. Add photo of recipe into public/Photos.
+**4. Add photo of recipe into public/Photos.**
 
 
 **See remained task for IV. What Still Need**
