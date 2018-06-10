@@ -185,6 +185,10 @@ ul {
   animation-duration: 2s;
 }
 
+#create-recipe-button:focus {
+  outline: none;
+}
+
 #modal-backdrop {
   position: fixed;
   top: 0;
