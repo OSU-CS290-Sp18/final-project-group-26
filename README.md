@@ -212,10 +212,10 @@ page that shows all the information of that recipe.
 
 
 
-#Update
+# Update
 
 
-##Update v1.2
+## Update v1.2
 
 **1. Create the server for recipe data:**
 
