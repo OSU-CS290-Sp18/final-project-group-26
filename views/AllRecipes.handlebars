@@ -1,5 +1,29 @@
 
-    <main class="notfounded-container hidden"> <!-- for 404 -->
-      <h1>404</h1>
-      <h3>We could not find that page.</h3>
-    </main>
+<main class="display_container">
+<!-- This is the main display container, content inside this will
+change for different page. -->
+
+<!-- *****************This is the All Recipe page*****************-->
+
+      <div class="page_container_all_recipe">
+          <!-- For the main display screen for main content -->
+          <!-- This 'test' is just for test purpose, will remove in
+              final design-->
+
+          <div class="all_recipe_container">
+              <!-- This is the container to display recommanded
+                dishes -->
+              
+            {{#each recipes}}
+            <!-- The 'recommands' is a list contain the detail for the 
+                  recommandation recipe, basically is the 'name' and 'image_url'-->
+                
+                {{> SimpleRecipe}}
+                <!-- This is the container template for simple recipe -->
+
+            {{/each}}
+
+          </div>
+      </div>
+
+</main>

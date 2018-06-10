@@ -1,0 +1,26 @@
+<main class="display_container">
+    <!-- This is the main display container, content inside this will
+    change for different page. -->
+    <!-- *****************This is the Category page*****************-->
+
+    <div class="page_container_category">
+        <!-- This is what should be shared -->
+
+        <div class="left_bar">
+            <!-- This is the category bar on category page -->
+            {{> Bar}}
+        </div>
+
+        <div class="category_display_container">
+            <!-- This container used to display the simple recipe for
+            specific category such as recipe for Meat, or for Seafood.-->
+
+            {{#each category_recipe}}
+                {{> SimpleRecipe}}
+            {{/each}}
+
+        </div>
+
+    </div>
+
+</main>
