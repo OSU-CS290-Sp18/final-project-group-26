@@ -39,9 +39,9 @@ if(createButton){
 function cleanInputData(){
     var recipeInputElements = document.getElementsByClassName('recipe-input-element');
 
-    for(var i=0; i < recipeInputElements.length; i++){
+    for(var i=0; i < recipeInputElements.length-1; i++){
       var input = recipeInputElements[i].querySelector('input,textarea');
-      input.value = '';
+      input.value ='';
     }
 }
 
@@ -58,6 +58,43 @@ function hideModal(){
 //This will be click hidden function
 
 var CancelButton = document.querySelector('.modal-cancel-button');
-var CloseButton = document.querySelector('.modal-close-button')
+var CloseButton = document.querySelector('.modal-close-button');
 CancelButton  .addEventListener('click', hideModal);
 CloseButton.addEventListener('click', hideModal);
+
+
+var allrecipes = [];
+
+
+function acceptContent(){
+    var recipe_url = document.getElementById('recipe-url-input').value;
+    var recipe_ingred = document.getElementById('recipe-ingredient-input').value;
+    var recipe_direction = document.getElementById('recipe-direction-input').value;
+    var recipe_category = document.getElementById('recipe-category-input').value;
+
+
+    if(recipe_url && recipe_ingred && recipe_direction){
+        allrecipes.push({
+              photoURL: recipe_url,
+              Ingredient: recipe_ingred,
+              Direction: recipe_direction,
+
+        });
+        var request = new XMLHttpRequest();
+
+        cleanInputData();
+
+        hideModal();
+
+    }
+    else{
+        alert("You must fill out all content of a recipe");
+    }
+
+}
+
+
+
+//This will be accept button
+var acceptButton = document.querySelector('.modal-accept-button');
+acceptButton.addEventListener('click', acceptContent)
