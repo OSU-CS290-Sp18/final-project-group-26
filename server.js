@@ -17,28 +17,35 @@ var recipe_obj = {
     name: 'Stir - Fried Shrimp and Scallions',
     photoURL: 'https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fcdn-image.foodandwine.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2F200911-xl-mama-changs-stir-fried-shrimp-and-scallions.jpg%3Fitok%3DdORctdLA&w=800&q=85',
     ingredient: "1/2 pounds shelled and deveined large shrimp; 3 garlic clovesSliced One; 1-inch piece of fresh ginger",
-    direction: "Step 1: In a large bowl, toss the shrimp with the garlic, ginger, red pepper, egg white and 1 teaspoon of the cornstarch until well-coated; Step 2: In a medium bowl, whisk the ketchup with the broth, sugar, pepper, salt and the remaining 1 teaspoon of cornstarch; Step 3: In a very large skillet, heat the oil until shimmering. Add the shrimp and stir-fry over high heat until they begin to turn pink. Add the ketchup mixture and simmer until the shrimp are cooked, about 2 minutes. Stir in the scallions and cilantro and serve."
+    direction: "Step 1: In a large bowl, toss the shrimp with the garlic, ginger, red pepper, egg white and 1 teaspoon of the cornstarch until well-coated; Step 2: In a medium bowl, whisk the ketchup with the broth, sugar, pepper, salt and the remaining 1 teaspoon of cornstarch; Step 3: In a very large skillet, heat the oil until shimmering. Add the shrimp and stir-fry over high heat until they begin to turn pink. Add the ketchup mixture and simmer until the shrimp are cooked, about 2 minutes. Stir in the scallions and cilantro and serve.",
+    href: 'none'
 };
 
 var category_list =[
     {
         name: 'Meat',
-        photoURL: 'Photos/Meat/meat.jpg'
+        photoURL: 'Photos/Meat/meat.jpg',
+        href: '/category/meat'
     },{
         name: 'Seafood',
-        photoURL: 'Photos/Seafood/seafood.jpg'
+        photoURL: 'Photos/Seafood/seafood.jpg',
+        href: '/category/seafood'
     },{
         name: 'Vegetable',
-        photoURL: 'Photos/Vegetable/vegetable.png'
+        photoURL: 'Photos/Vegetable/vegetable.png',
+        href: '/category/vegetables'
     },{
         name: 'Soup',
-        photoURL: 'Photos/Soup/soup.jpg'
+        photoURL: 'Photos/Soup/soup.jpg',
+        href: '/category/soup'
     },{
-        name: 'Desset',
-        photoURL: 'Photos/Dessert/dessert.jpg'
+        name: 'Dessert',
+        photoURL: 'Photos/Dessert/dessert.jpg',
+        href: '/category/dessert'
     },{
         name: 'Others',
-        photoURL: 'Photos/Others/other.jpg'
+        photoURL: 'Photos/Others/other.jpg',
+        href: '/category/others'
     }
 
 ]
@@ -125,25 +132,21 @@ app.get('/category/seafood', function(req,res){
         one_category: sea_food_list
     });
 })
-
 app.get('/category/vegetables', function(req,res){
     res.status(200).render('OneCategory',{
         one_category: veg_list
     });
 });
-
 app.get('/category/soup', function(req,res){
     res.status(200).render('OneCategory',{
         one_category: soup_list
     });
 });
-
 app.get('/category/dessert', function(req,res){
     res.status(200).render('OneCategory',{
         one_category: dessert_list
     });
 });
-
 app.get('/category/others', function(req,res){
     res.status(200).render('OneCategory',{
         one_category: others_list
