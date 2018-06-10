@@ -11,98 +11,165 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
 /*****This is the test object*****/
-
-var test_obj_elem = {
+//The structure of the test object should be changed, this is currently used for
+//alpha version of the web app
+var recipe_obj = {
     name: 'Stir - Fried Shrimp and Scallions',
     photoURL: 'https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fcdn-image.foodandwine.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2F200911-xl-mama-changs-stir-fried-shrimp-and-scallions.jpg%3Fitok%3DdORctdLA&w=800&q=85',
-    ingredient_list: [
-        {ingredient_list_element: '1/2 pounds shelled and deveined large shrimp'},
-        {ingredient_list_element: '3 garlic cloves'},
-        {ingredient_list_element: 'Sliced One 1-inch piece of fresh ginger'},
-    ],
-    direction_list: [
-        {direction_list_element: 'In a large bowl, toss the shrimp with the garlic, ginger, red pepper, egg white and 1 teaspoon of the cornstarch until well-coated.'},
-        {direction_list_element: 'In a medium bowl, whisk the ketchup with the broth, sugar, pepper, salt and the remaining 1 teaspoon of cornstarch.'},
-        {direction_list_element: 'In a very large skillet, heat the oil until shimmering. Add the shrimp and stir-fry over high heat until they begin to turn pink. Add the ketchup mixture and simmer until the shrimp are cooked, about 2 minutes. Stir in the scallions and cilantro and serve.'},
-    ]
+    ingredient: "1/2 pounds shelled and deveined large shrimp; 3 garlic clovesSliced One; 1-inch piece of fresh ginger",
+    direction: "Step 1: In a large bowl, toss the shrimp with the garlic, ginger, red pepper, egg white and 1 teaspoon of the cornstarch until well-coated; Step 2: In a medium bowl, whisk the ketchup with the broth, sugar, pepper, salt and the remaining 1 teaspoon of cornstarch; Step 3: In a very large skillet, heat the oil until shimmering. Add the shrimp and stir-fry over high heat until they begin to turn pink. Add the ketchup mixture and simmer until the shrimp are cooked, about 2 minutes. Stir in the scallions and cilantro and serve.",
+    href: 'none'
 };
-    
-var test_obj = [test_obj_elem,test_obj_elem,test_obj_elem,test_obj_elem,test_obj_elem,test_obj_elem,test_obj_elem,test_obj_elem,test_obj_elem,test_obj_elem];
 
-var cat_list = [
+var category_list =[
     {
-    name: 'Meat',
-    element: [
-        {name: 'Pork'},
-        {name: 'Beef'},
-        {name: 'Chicken'},
-        {name: 'Lamb'},
-        {name: 'Turkey'},
-        {name: 'Harry Potter'}
-    ]},
-    {
-    name: 'Seafood',
-    element: [
-        {name: 'Fish'},
-        {name: 'ShellFish'},
-        {name: 'Shrimp'},
-        {name: 'Crab'},
-        {name: 'Krabby patty'},
-        {name: 'HAHAHAHA'}
-    ]},
-    {
-    name: 'Vegetable',
-    element: [
-        {name: 'Lettuces'},
-        {name: 'Cabbage'},
-        {name: 'Corn'},
-        {name: 'Tomato'},
-        {name: 'Potato'},
-        {name: 'Jameson'}
-    ]},
+        name: 'Meat',
+        photoURL: 'Photos/Meat/meat.jpg',
+        href: '/category/meat'
+    },{
+        name: 'Seafood',
+        photoURL: 'Photos/Seafood/seafood.jpg',
+        href: '/category/seafood'
+    },{
+        name: 'Vegetable',
+        photoURL: 'Photos/Vegetable/vegetable.png',
+        href: '/category/vegetables'
+    },{
+        name: 'Soup',
+        photoURL: 'Photos/Soup/soup.jpg',
+        href: '/category/soup'
+    },{
+        name: 'Dessert',
+        photoURL: 'Photos/Dessert/dessert.jpg',
+        href: '/category/dessert'
+    },{
+        name: 'Others',
+        photoURL: 'Photos/Others/other.jpg',
+        href: '/category/others'
+    }
+
+]
+
+
+var meat_list = [
+    recipe_obj,
+    recipe_obj,
+    recipe_obj
+
+];
+var sea_food_list = [
+    recipe_obj,
+    recipe_obj,
+];
+var veg_list = [
+    recipe_obj
+
+];
+var soup_list = [
+    recipe_obj,
+    recipe_obj,
+    recipe_obj,
+    recipe_obj,
+    recipe_obj,
+    recipe_obj,
+    recipe_obj,
+
+];
+var dessert_list = [
+    recipe_obj,
+    recipe_obj
+];
+var others_list = [
+    recipe_obj,
+    recipe_obj
+];
+var recipe_list = [
+    recipe_obj,
+    recipe_obj,
+    recipe_obj,
+    recipe_obj,
+    recipe_obj,
+    recipe_obj,
+    recipe_obj,
+    recipe_obj,
+    recipe_obj,
+    recipe_obj
 ];
 
 
-//Use to respond to the request of the index/recommend page 
+//Use to respond to the request of the index/recommend page
 
-app.get('/', function(req,res){	
-		res.status(200).render('indexpage',{
-			recommands: test_obj
-		});		
+app.get('/', function(req,res){
+		res.status(200).render('Index',{
+			recommands: recipe_list
+		});
 });
+
 
 app.use(express.static('public'));
 
 
-
 //Use to respond to the request of the category page
 
-app.get('/category', function (req, res) {
-    res.status(200).render('categorypage', {
-        cat_class: cat_list
+app.get('/category', function (req, res,nect) {
+    res.status(200).render('Category', {
+        category_recipe: category_list
     });
 });
 
+//Use to respond to which category is requested
+
+app.get('/category/meat', function(req, res){
+    res.status(200).render('OneCategory', {
+        one_category: meat_list
+    });
+});
+
+
+
+app.get('/category/seafood', function(req,res){
+    res.status(200).render('OneCategory',{
+        one_category: sea_food_list
+    });
+})
+app.get('/category/vegetables', function(req,res){
+    res.status(200).render('OneCategory',{
+        one_category: veg_list
+    });
+});
+app.get('/category/soup', function(req,res){
+    res.status(200).render('OneCategory',{
+        one_category: soup_list
+    });
+});
+app.get('/category/dessert', function(req,res){
+    res.status(200).render('OneCategory',{
+        one_category: dessert_list
+    });
+});
+app.get('/category/others', function(req,res){
+    res.status(200).render('OneCategory',{
+        one_category: others_list
+    });
+});
 
 
 //Use to respond to the request of the single recipe page
 
 app.get('/recipes', function (req, res) {
-    res.status(200).render('recipepage', {
-        object: [test_obj_elem]
+    res.status(200).render('AllRecipes', {
+        recipes: recipe_list
     });
 });
+
 
 
 
 //Use to show the 404 page
 
 app.get('*', function(req,res){
-	res.status(404).render('404');	
+	res.status(404).render('404');
 });
-
-
-
 
 
 app.listen(port, function () {
