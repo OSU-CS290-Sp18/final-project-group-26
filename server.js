@@ -85,7 +85,7 @@ app.get('/', function(req,res){
                 recommands: recommend_list
             });
         }
-    });   
+    });
 });
 
 
@@ -119,11 +119,22 @@ app.get('/category/:Category', function(req,res){
                 one_category: cat_list
             });
         }
-    }); 
+    });
 });
 
+app.get('/category/:Category/:name',function(req,res,next){
+    var cate = mongoDB.collection('Category')
+    var name_ = req.params.name;
+    cate.find({ name: name_}).toArray(function(err, Category){
+      if(err){
+        res.status(500).send("== Error when fetching recipe_list from DB.");
+      }
+      else{
+        res.status(200).render('FullRecipe', Category[0]);
+      }
+    });
 
-//Use to respond to the request of the single recipe page
+});
 
 app.get('/recipes', function (req, res) {
     var recipeCollection = mongoDB.collection('recipe_list');
@@ -137,6 +148,52 @@ app.get('/recipes', function (req, res) {
         }
     });
 });
+
+app.post('/category/:Category/:name',function(req,res,next){
+      var cate = req.params.Category;
+      var name_ = req.params.name;
+      if(req.body && req.body.recipe_name && req.body.recipe_url && req.body.recipe_ingred && req.body.recipe_direction && req.body.recipe_category){
+        /*var recipe = {
+          name: req.body.recipe_name,
+          photoURL: req.body.recipe_url,
+          ingredient: req.body.recipe_ingred,
+          direction: req.body.recipe_direction,
+          category: req.body.recipe_category
+        };*/
+        var categoryCollection = mongoDB.collection('Category');
+        categoryCollection.updateOne(
+          {
+            name: req.body.recipe_name,
+            photoURL: req.body.recipe_url,
+            ingredient: req.body.recipe_ingred,
+            direction: req.body.recipe_direction,
+            category: req.body.recipe_category
+          },
+          function (err, result){
+            if(err){
+                res.status(500).send("Error inserting recipe into DN.")
+              }
+              else {
+                console.log("== inset result : ", result);
+                if(result.matchedCount>0){
+                  res.status(200).end();
+                }
+                else{
+                next();
+                }
+              }
+            }
+          );
+        }
+        else {
+            res.status(400).send("Request needs a JSON body with request")
+        }
+
+});
+
+//Use to respond to the request of the single recipe page
+
+
 
 //Use to show the 404 page
 
