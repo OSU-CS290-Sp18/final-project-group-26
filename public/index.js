@@ -62,34 +62,67 @@ var CloseButton = document.querySelector('.modal-close-button');
 CancelButton  .addEventListener('click', hideModal);
 CloseButton.addEventListener('click', hideModal);
 
+function getRecipeFromURL(){
+    var path = window.location.pathname;
+    var pathParts = path.split('/');
+    if(pathParts[1]==='category'){
+        return pathParts[2];
+    }
+    else{
+        return null;
+    }
+}
 
 var allrecipes = [];
 
 
 function acceptContent(){
+    var recipe_name = document.getElementById('recipe-name-input').value;
     var recipe_url = document.getElementById('recipe-url-input').value;
     var recipe_ingred = document.getElementById('recipe-ingredient-input').value;
     var recipe_direction = document.getElementById('recipe-direction-input').value;
     var recipe_category = document.getElementById('recipe-category-input').value;
 
 
-    if(recipe_url && recipe_ingred && recipe_direction){
-        allrecipes.push({
-              photoURL: recipe_url,
-              Ingredient: recipe_ingred,
-              Direction: recipe_direction,
-
-        });
+    if(!recipe_name || !recipe_url || !recipe_ingred || !recipe_direction){
+              alert("You must fill out all content of a recipe");
+        }
+      else{
         var request = new XMLHttpRequest();
+        var category = getRecipeFromURL();
+        var url = "/category" + category;
+        request.open("POST", url);
+        var requestBody = JSON.stringify({
+          name: recipe_name,
+          photoURL: recipe_url,
+          ingredient: recipe_ingred,
+          direction: recipe_direction,
+          category: recipe_category
+        });
 
-        cleanInputData();
+        request.addEventListener('load',function (event){
+            if(event.target.status ===200){
+                var singleRecipeTemp = Handlebars.templates.SimpleRecipe;
+                var newRecipeHTML = singleRecipeTemp({
+                  name: recipe_name,
+                  photoURL: recipe_url,
+                  ingredient: recipe_ingred,
+                  direction: recipe_direction,
+                  category: recipe_category
+                });
+                var RecipeContainer = document.querySelector('.all_recipe_container');
+                RecipeContainer.insertAdjacentHTML('beforeend', newRecipeHTML);
+              }
+              else{
+                  alert("Error adding recipe:" + event.target.response);
+              }
+            });
 
-        hideModal();
-
-    }
-    else{
-        alert("You must fill out all content of a recipe");
-    }
+            request.setRequestHeader('Content-Type', 'application/json');
+            request.send(requestBody);
+            cleanInputData();
+            hideModal();
+          }
 
 }
 
