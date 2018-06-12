@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "handlebars views/partials/SimpleRecipe.handlebars -f public/SimpleRecipe.js",
+    "prestart": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -20,6 +22,7 @@
   "dependencies": {
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
-    "handlebars": "^4.0.11"
+    "handlebars": "^4.0.11",
+    "mongodb": "^3.0.10"
   }
 }

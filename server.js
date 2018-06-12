@@ -1,5 +1,9 @@
+//$: git clone https://github.com/OSU-CS290-Sp18/final-project-group-26.git master
+//$: mongo "mongodb+srv://cluster0-bmwdm.gcp.mongodb.net/test" --username group26
+
 
 var path = require('path');
+var fs = require('fs');
 var express = require('express');
 var exphbs = require('express-handlebars');
 var bodyParser = require('body-parser');
@@ -25,6 +29,8 @@ var port = process.env.PORT || 3000;
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
+
+app.use(bodyParser.json());
 
 
 var category_list =[
@@ -122,18 +128,41 @@ app.get('/category/:Category', function(req,res){
     });
 });
 
-app.get('/category/:Category/:name',function(req,res,next){
-    var cate = mongoDB.collection('Category')
+app.get('/recipes/:name',function(req,res,next){
+    var recipe_list = mongoDB.collection('recipe_list');
     var name_ = req.params.name;
-    cate.find({ name: name_}).toArray(function(err, Category){
-      if(err){
-        res.status(500).send("== Error when fetching recipe_list from DB.");
-      }
-      else{
-        res.status(200).render('FullRecipe', Category[0]);
-      }
-    });
+    recipe_list.find({ name: name_}).toArray(function(err, Category){
+        if(err) 
+        {
+            res.status(500).send("== Error when fetching recipe_list from DB.");
+        }
+        else 
+        {
+            var target_recipe = Category[0];
+            var ingred_list = target_recipe.ingredient;
+            var direc_list = target_recipe.direction;
 
+            //Start convert the ingredient list
+            ingred_list = ingred_list.split(";");
+            for(var i = 0; i<ingred_list.length; i++)
+            {
+                ingred_list[i] = {ingredients: ingred_list[i] + '.'};
+            }
+
+            //Start convert the direction list
+            direc_list = direc_list.split(";");
+            for(var i = 0; i<direc_list.length; i++)
+            {
+                direc_list[i] = {directions: direc_list[i] + '.'};
+            }
+
+            //Make new object
+            target_recipe.ingredient = ingred_list;
+            target_recipe.direction = direc_list;
+
+            res.status(200).render('SingleRecipe', target_recipe);
+        }
+    });
 });
 
 app.get('/recipes', function (req, res) {
@@ -149,45 +178,45 @@ app.get('/recipes', function (req, res) {
     });
 });
 
-app.post('/category/:Category/:name',function(req,res,next){
-      var cate = req.params.Category;
-      var name_ = req.params.name;
-      if(req.body && req.body.recipe_name && req.body.recipe_url && req.body.recipe_ingred && req.body.recipe_direction && req.body.recipe_category){
-        /*var recipe = {
-          name: req.body.recipe_name,
-          photoURL: req.body.recipe_url,
-          ingredient: req.body.recipe_ingred,
-          direction: req.body.recipe_direction,
-          category: req.body.recipe_category
-        };*/
-        var categoryCollection = mongoDB.collection('Category');
-        categoryCollection.updateOne(
-          {
-            name: req.body.recipe_name,
-            photoURL: req.body.recipe_url,
-            ingredient: req.body.recipe_ingred,
-            direction: req.body.recipe_direction,
-            category: req.body.recipe_category
-          },
-          function (err, result){
+app.post('/category/addRecipe',function(req,res,next){
+    var cate = req.params.Category;
+    var name_ = req.params.name;
+    console.log("== Req.body: ", req.body);
+    if(req.body && req.body.name && req.body.photoURL && req.body.ingredient && req.body.direction && req.body.category){
+    /*var recipe = {
+    name: req.body.recipe_name,
+    photoURL: req.body.recipe_url,
+    ingredient: req.body.recipe_ingred,
+    direction: req.body.recipe_direction,
+    category: req.body.recipe_category
+    };*/
+        var categoryCollection = mongoDB.collection('recipe_list');
+        categoryCollection.insertOne(
+            {
+                name: req.body.name,
+                photoURL: req.body.photoURL,
+                ingredient: req.body.ingredient,
+                direction: req.body.direction,
+                category: req.body.category
+            },
+            function (err, result){
             if(err){
                 res.status(500).send("Error inserting recipe into DN.")
-              }
-              else {
+            }
+            else {
                 console.log("== inset result : ", result);
                 if(result.matchedCount>0){
-                  res.status(200).end();
+                    res.status(200).end();
                 }
                 else{
-                next();
+                    next();
                 }
-              }
             }
-          );
-        }
-        else {
-            res.status(400).send("Request needs a JSON body with request")
-        }
+        });
+    }
+    else {
+        res.status(400).send("Request needs a JSON body with request");
+    }
 
 });
 
