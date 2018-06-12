@@ -111,7 +111,7 @@ app.get('/category', function (req, res,nect) {
 
 //Use to respond to which category is requested
 
-app.get('/category/:Category', function(req,res){
+app.get('/category/:Category', function(req,res,next){
     var cate = req.params.Category;
 
     //This is used to find specific kind of recipe that have category tag with the value of cate.
@@ -132,11 +132,14 @@ app.get('/recipes/:name',function(req,res,next){
     var recipe_list = mongoDB.collection('recipe_list');
     var name_ = req.params.name;
     recipe_list.find({ name: name_}).toArray(function(err, Category){
-        if(err) 
+        if(err)
         {
             res.status(500).send("== Error when fetching recipe_list from DB.");
         }
-        else 
+        else if(Category.length==0){
+          res.status(404).send("We can't found this recipe :<");
+        }
+        else
         {
             var target_recipe = Category[0];
             var ingred_list = target_recipe.ingredient;
