@@ -53,6 +53,7 @@ header {
 
 .navbar-search {
   position: absolute;
+  top: -5px;
   right: 10px;
   padding: 14px 16px;
 }
@@ -65,6 +66,11 @@ header {
 .navitem a:hover {
   font-size: 20px;
 }
+
+.navbar-search a:hover {
+  font-size: 15px;
+}
+
 
 .link-page {
   display: flex;
@@ -315,6 +321,7 @@ header {
     flex-wrap: wrap;
     flex-grow: 0;
     flex-shrink: 0;
+    justify-content: center;
 }
 
 

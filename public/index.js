@@ -127,4 +127,19 @@ function acceptContent(){
 
 //This will be accept button
 var acceptButton = document.querySelector('.modal-accept-button');
-acceptButton.addEventListener('click', acceptContent)
+acceptButton.addEventListener('click', acceptContent);
+
+var searchInput = document.getElementById('navbar-search-input');
+
+searchInput.addEventListener('change',function(event){
+  var searchLink = document.getElementById('navbar-search-link');
+  var textInput = event.target.value;
+  var searchURL;
+  if(!textInput){
+    searchURL = "/recipes";
+  }
+  else{
+    searchURL ="/recipes" +"/"+ textInput;
+  }
+  searchLink.href = searchURL;
+});
