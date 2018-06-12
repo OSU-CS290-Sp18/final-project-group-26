@@ -32,6 +32,7 @@ app.set('view engine', 'handlebars');
 
 app.use(bodyParser.json());
 
+var category_namelist =['Meat','Seafood','Vegetable','Soup','Dessert','Others'];
 
 var category_list =[
     {
@@ -88,6 +89,7 @@ app.get('/', function(req,res){
             res.status(500).send("== Error when fetching recipe_list from DB.")
         } else {
             res.status(200).render('Index',{
+                reco: true,
                 recommands: recommend_list
             });
         }
@@ -103,6 +105,7 @@ app.use(express.static('public'));
 
 app.get('/category', function (req, res,nect) {
     res.status(200).render('Category', {
+        cate: true,
         category_recipe: category_list
     });
 });
@@ -114,6 +117,10 @@ app.get('/category', function (req, res,nect) {
 app.get('/category/:Category', function(req,res,next){
     var cate = req.params.Category;
 
+    if(!category_namelist.includes(cate)){
+      res.status(404).send("We do not have this category.");
+    } else {
+
     //This is used to find specific kind of recipe that have category tag with the value of cate.
     var category_list_specific = mongoDB.collection("recipe_list").find({category: cate});
 
@@ -122,11 +129,12 @@ app.get('/category/:Category', function(req,res,next){
             res.status(500).send("== Error when fetching recipe_list from DB.")
         } else {
             res.status(200).render('OneCategory',{
+                cate: true,
                 one_category: cat_list
             });
         }
     });
-});
+}});
 
 app.get('/recipes/:name',function(req,res,next){
     var recipe_list = mongoDB.collection('recipe_list');
@@ -137,7 +145,7 @@ app.get('/recipes/:name',function(req,res,next){
             res.status(500).send("== Error when fetching recipe_list from DB.");
         }
         else if(Category.length==0){
-          res.status(404).send("We can't found this recipe :<");
+          res.status(404).send("We do not have this recipe :<");
         }
         else
         {
@@ -175,6 +183,7 @@ app.get('/recipes', function (req, res) {
             res.status(500).send("== Error when fetching recipe_list from DB.")
         } else {
             res.status(200).render('AllRecipes',{
+                reci: true,
                 recipes: recipe_list
             });
         }
