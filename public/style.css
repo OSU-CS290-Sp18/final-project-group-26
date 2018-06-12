@@ -156,7 +156,7 @@ header {
 
 #navbar-search-button {
   border: none;
-  background-color: white;
+  background-color: rgba(0,0,0,0);
 }
 
 #navbar-search-button:hover {
